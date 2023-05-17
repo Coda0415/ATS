@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <div>
+        <div><br></div>
+        {% for position in open_positions %}
+            <div class="position-container">
+                <a href="{{ url_for('position_detail.position_detail', position_id=position.positionid) }}">{{ position.jobtitle }} | {{ position.employmenttype }} | ${{ position.wage|int }}/hr | {{ position.businesssegment }} | {{ position.jobcity }}</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

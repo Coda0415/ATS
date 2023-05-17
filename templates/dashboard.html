@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+{% set displayed_jobs = [] %}
+{% set show_open_positions_table = request.endpoint.endswith('open_positions_by_job') %}
+
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Jobs:</h3>
+            <ul>
+                {% for job in jobs %}
+                <li><a href="{{ url_for('dashboard.get_employees', job_name=job.jobname, job_number=job.jobnumber) }}">{{ job.jobname }}</a></li>
+                {% endfor %}
+            </ul>
+            <h3>Open Positions:</h3>
+            <ul>
+                {% for position in open_positions %}
+                {% if position.jobdescription not in displayed_jobs %}
+                    {% set displayed_jobs = displayed_jobs.append(position.jobdescription) %}
+                    <li><a href="{{ url_for('dashboard.open_positions_by_job', job_name=position.jobdescription) }}">{{ position.jobdescription }}</a></li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="col-md-10">
+            <h3>Job Details:</h3>
+            <div class="container">
+                {% if employees %}
+                <table class="table">
+    <thead>
+        <tr>
+            <thead>
+    <tr>
+        <th>Employee Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Hire Date</th>
+        <th>Employment Type</th>
+        <th>Actions</th> <!-- Add this line -->
+    </tr>
+</thead>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+<tr>
+    <td>{{ employee.employeenumber }}</td>
+    <td>{{ employee.firstname }}</td>
+    <td>{{ employee.lastname }}</td>
+    <td>{{ employee.hiredate }}</td>
+    <td>{{ employee.employmenttype }}</td>
+    <td>
+        <a href="{{ url_for('employeetermform.employeetermform', job_number=employee.jobnumber, team_member_name=employee.firstname ~ ' ' ~ employee.lastname, employee_number=employee.employeenumber, jobname=employee.jobname) }}">Term Employee</a>
+
+    </td> <!-- Add this line -->
+</tr>
+{% endfor %}
+
+        {% if not show_open_positions_table %}
+            {% for position in open_positions %}
+                {% if position.jobdescription == job_name %}
+                    <tr>
+                        <td>{{ position.positionid }}</td>
+                        <td>Open Position</td>
+                        <td>{{ position.employmenttype }}</td>
+                        <td>{{ position.shift }}</td>
+                        <td>Open Position</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </tbody>
+</table>
+                <div class="col-md-10">
+    <h3>Job Details:</h3>
+    <div class="container">
+        <!-- Existing employees table code... -->
+
+        {% if applicants %}
+            <h3>Applicants:</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Applicant Status</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <!-- Add more columns as needed -->
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for applicant in applicants %}
+                        <tr>
+                            <td>{{ applicant.applicantstatus }}</td>
+                            <td>{{ applicant.firstname }}</td>
+                            <td>{{ applicant.lastname }}</td>
+                            <!-- Add more columns as needed -->
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+</div>
+                {% else %}
+                <p>Please select a job to see its employees.</p>
+                {% endif %}
+            </div>
+            {% if job_name and show_open_positions_table %}
+            <h2>Open Positions for {{ job_name }}</h2>
+            <table class="table">
+    <thead>
+        <tr>
+            <th>Employee Number</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Hire Date</th>
+            <th>Employment Type</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for position in open_positions %}
+        <tr>
+            <td>{{ position.positionid }}</td>
+            <td>{{ position.jobtitle }}</td>
+            <td>{{ position.employmenttype }}</td>
+            <td>{{ position.shift }}</td>
+            <td>Open Position</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

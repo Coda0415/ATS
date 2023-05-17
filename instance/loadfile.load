@@ -1,0 +1,15 @@
+load database
+    from sqlite:///Users/colindavis/PycharmProjects/ATS/instance/frantz.db
+    into postgresql://coda415:Qwerty415!@localhost/frantz
+
+with include drop, create tables, create indexes, reset sequences
+
+set work_mem to '16MB', maintenance_work_mem to '512 MB'
+
+CAST type datetime to timestamptz drop default drop not null using zero-dates-to-null
+
+before load do $$ drop schema if exists public cascade $$;
+
+INCLUDING ONLY TABLE NAMES LIKE 'EmployeeMasterList'
+;
+

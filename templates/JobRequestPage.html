@@ -1,0 +1,227 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user_role == "Admin" %}
+    <label for="region-select">Select a Region:</label>
+    <select id="region-select" name="region-select">
+        {% for region in regions %}
+            <option value="{{ region }}">{{ region }}</option>
+        {% endfor %}
+    </select>
+{% endif %}
+<style>.special-instruction-option {
+            display: inline-block;
+            margin-right: 10px;
+        }</style>
+<script>
+    function toggleSOBFields() {
+        const sobCheckbox = document.getElementById("sobCheckbox");
+        const sobFields = document.getElementById("sobFields");
+        if (sobCheckbox.checked) {
+            sobFields.style.display = "block";
+        } else {
+            sobFields.style.display = "none";
+        }
+    }
+
+    function addEventListeners() {
+        if (document.getElementById("region-select")) {
+            document.getElementById("region-select").addEventListener("change", function() {
+                let selectedRegion = this.value;
+                let job_numbers = JSON.parse(document.getElementById("job_numbers").textContent);
+
+                // Filter job_numbers based on the selected region
+                let filteredJobNumbers = job_numbers.filter(function(jobNumber) {
+                    return jobNumber.Region === selectedRegion;
+                });
+
+                // Update the JobNumber dropdown with the filtered job numbers
+                let jobNumberSelect = document.getElementById("job_number");
+                jobNumberSelect.innerHTML = "";
+                filteredJobNumbers.forEach(function(jobNumber) {
+                    let option = document.createElement("option");
+                    option.value = jobNumber.JobNumber;
+                    option.text = jobNumber.JobNumber;
+                    jobNumberSelect.add(option);
+                });
+            });
+        }
+
+        document.getElementById("other-checkbox").addEventListener("change", function() {
+            var otherInput = document.getElementById("other-instruction");
+            if (this.checked) {
+                otherInput.style.display = "block";
+            } else {
+                otherInput.style.display = "none";
+                otherInput.value = ""; // Clear the input field when "Other" is deselected
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        addEventListeners();
+    });
+</script>
+
+
+<div class="d-flex justify-content-center">
+    <div class="container" style="width: 33.33%;">
+        <h1 class="mt-4">Job Form</h1>
+        <form action="{{ url_for('job_request_submission.submit_job_request') }}" method="post">
+            {{ form.csrf_token }}
+            <div id="job_numbers" style="display:none;">
+                    {{ job_numbers | tojson }}
+                </div>
+                <div class="form-group">
+                    <label for="job_title">Job Title:</label>
+                    <select name="job_title" id="job_title" class="form-control" required>
+                        {% for title in job_titles %}
+                        <option value="{{ title }}">{{ title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+        <div class="form-group">
+            <label for="job_number">Job Number:</label>
+            <select name="job_number" id="job_number" class="form-control" required>
+    {% for number in job_numbers %}
+    <option value="{{ number.JobNumber }}">{{ number.JobNumber }}</option>
+    {% endfor %}
+</select>
+        </div>
+
+                <div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Part-Time or Full-Time?</label>
+            <br>
+            {% for option in ["Part-Time", "Full-Time"] %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="employment_type" id="{{ option }}" value="{{ option }}">
+                    <label class="form-check-label" for="{{ option }}">{{ option }}</label>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="hourly-pay">Hourly pay for this position?</label>
+            <input type="text" name="hourly-pay" id="hourly-pay" class="form-control" required>
+        </div>
+    </div>
+</div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="starting-time">Shift Starting Time</label>
+                            <input type="time" name="starting-time" id="starting-time" class="form-control" step="1800">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+    <div class="form-group">
+        <label for="ending-time">Shift Ending Time</label>
+        <input type="time" name="ending-time" id="ending-time" class="form-control" step="1800">
+    </div>
+</div>
+</div>
+<div class="form-group">
+    <label for="flex-hours">Number of Hours this Job can Flex:</label>
+    <input type="text" name="flex-hours" id="flex-hours" class="form-control">
+</div>
+            <div class="form-group">
+                    <label>What Days does this Position work?</label>
+                    <br>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="workdays[]" id="monday" value="Monday" class="form-check-input">
+                        <label for="monday" class="form-check-label">Monday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="workdays[]" id="tuesday" value="Tuesday" class="form-check-input">
+                        <label for="tuesday" class="form-check-label">Tuesday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="workdays[]" id="wednesday" value="Wednesday" class="form-check-input">
+                        <label for="wednesday" class="form-check-label">Wednesday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="workdays[]" id="thursday" value="Thursday" class="form-check-input">
+                        <label for="thursday" class="form-check-label">Thursday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="workdays[]" id="friday" value="Friday" class="form-check-input">
+                        <label for="friday" class="form-check-label">Friday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="workdays[]" id="saturday" value="Saturday" class="form-check-input">
+                        <label for="saturday" class="form-check-label">Saturday</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input type="checkbox" name="workdays[]" id="sunday" value="Sunday" class="form-check-input">
+                        <label for="sunday" class="form-check-label">Sunday</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="num-positions">How many positions do you need to fill?</label>
+                    <input type="number" name="num_positions" >
+
+                </div>
+<div class="form-group">
+    <label for="special-instructions">List any Special Instructions:</label>
+    <div id="special-instructions">
+        <span class="special-instruction-option">
+            <input type="checkbox" id="sobCheckbox" name="sobCheckbox" onclick="toggleSOBFields()">
+            <label for="sobCheckbox">SOB</label>
+            <div id="sobFields" style="display:none;">
+                <label for="sobAmount">How much is the Sign on bonus?</label>
+                <input type="number" id="sobAmount" name="sobAmount">
+                <br>
+                <label for="sobDays">After how many days is it to be paid out?</label>
+                <input type="number" id="sobDays" name="sobDays">
+            </div>
+        </span>
+       <span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Steel Toe Boots"> Steel Toe Boots<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Safety Glasses"> Safety Glasses<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Hard Had"> Hard Hat<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Able to Wear PPE"> Able to Wear PPE<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Floor Maintenance Experience"> Floor Maintenance Experience<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="MVR"> MVR<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Drivers License"> Drivers License<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Vaccination"> Vaccination<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Vaccination Records"> Vaccination Records<br>
+</span>
+<span class="special-instruction-option">
+    <input type="checkbox" name="special-instructions[]" value="Lift Push Pull 50lbs for Whole Shift"> Lift Push Pull 50lbs for Whole Shift<br>
+</span>
+<span class="special-instruction-option">
+        <input type="checkbox" name="special-instructions[]" value="Other" id="other-checkbox"> Other<br>
+        </span>
+
+        <input type="text" name="special-instructions[]" id="other-instruction" class="form-control" style="display:none;" placeholder="Enter other special instruction">
+
+    </div>
+</div>
+<input type="submit" value="Submit" class="btn btn-primary">
+</form>
+</div>
+</div>
+{% endblock %}
+
+

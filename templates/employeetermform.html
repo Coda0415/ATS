@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <style>/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Close */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+    <h1>Employee Termination Form</h1>
+    <form id="termForm" action="{{ url_for('employeetermform.submit_employeetermform') }}" method="post" onsubmit="event.preventDefault(); openModal();">
+        <!-- TODO: Add the necessary CSRF token, if required by your Flask configuration -->
+        <!-- Question 1 -->
+        <label for="job_number">Job Number:</label>
+        <input type="text" id="job_number" name="job_number" value="{{ job_number }}" readonly>
+
+        <label for="team_member_name">Team Member Name:</label>
+        <input type="text" id="team_member_name" name="team_member_name" value="{{ team_member_name }}" readonly>
+
+        <label for="jobname">Job Name:</label>
+        <input type="text" id="jobname" name="jobname" value="{{ jobname }}" readonly>
+
+
+        <!-- Question 3 -->
+        <label for="employee_number">Employee Number:</label>
+        <input type="text" id="employee_number" name="employee_number" value="{{employee_number}}" readonly>
+        <br>
+
+        <!-- Question 4 -->
+        <label for="last_day_worked">Last Day Worked:</label>
+        <input type="date" id="last_day_worked" name="last_day_worked">
+        <br>
+
+        <!-- Question 5 -->
+        <label>Type of Termination:</label><br>
+        <input type="radio" id="termination_no_call_no_show" name="termination_type" value="no_call_no_show">
+        <label for="termination_no_call_no_show">No call/ No show.</label><br>
+        <input type="radio" id="termination_discharged" name="termination_type" value="discharged">
+        <label for="termination_discharged">Discharged.</label><br>
+        <input type="radio" id="termination_quit_less_than_2_weeks" name="termination_type" value="quit_less_than_2_weeks">
+        <label for="termination_quit_less_than_2_weeks">Quit - with less than 2 weeks notice.</label><br>
+        <input type="radio" id="termination_quit_2_weeks_or_longer" name="termination_type" value="quit_2_weeks_or_longer">
+        <label for="termination_quit_2_weeks_or_longer">Quit - with 2 week notice or longer.</label><br>
+        <input type="radio" id="termination_quit_no_notice" name="termination_type" value="quit_no_notice">
+        <label for="termination_quit_no_notice">Quit - no notice.</label><br>
+        <input type="radio" id="termination_lost_account" name="termination_type" value="lost_account">
+        <label for="termination_lost_account">Lost account/Job Assignment ended.</label><br>
+        <input type="radio" id="termination_never_started" name="termination_type" value="never_started">
+        <label for="termination_never_started">Never started/ Never worked any hours.</label><br>
+
+        <!-- Question 6 -->
+        <div id="question_6" style="display:none;">
+            <label for="reason_for_leaving">Reason for Team Member Leaving:</label>
+            <textarea id="reason_for_leaving" name="reason_for_leaving"></textarea>
+        </div>
+        <br>
+
+                <!-- Question 7 -->
+        <label for="additional_information">Additional information related to Team Members termination:</label>
+        <textarea id="additional_information" name="additional_information" required></textarea>
+        <br>
+
+        <!-- Question 8 -->
+        <label>Does this position need to be refilled?</label><br>
+        <input type="radio" id="refill_yes" name="refill_position" value="yes">
+        <label for="refill_yes">Yes</label><br>
+        <input type="radio" id="refill_no" name="refill_position" value="no">
+        <label for="refill_no">No</label><br>
+
+        <!-- Categories with sliders and additional comments -->
+{% for category in ["Dependability", "Ability", "Attitude toward job", "Attitude toward supervisor", "Attitude toward co-workers", "Leadership", "Work without supervision"] %}
+    <label for="{{ category|lower|replace(" ", "_") }}_slider">{{ category }}:</label>
+    <input type="range" id="{{ category|lower|replace(" ", "_") }}_slider" name="{{ category|lower|replace(" ", "_") }}_slider" min="1" max="10" oninput="updateSliderValue(this)">
+    <input type="number" class="slider-value" id="{{ category|lower|replace(" ", "_") }}_value" name="{{ category|lower|replace(" ", "_") }}_value" min="1" max="10" value="6" readonly>
+    <input type="checkbox" id="{{ category|lower|replace(" ", "_") }}_comments_checkbox" name="{{ category|lower|replace(" ", "_") }}_comments_checkbox">
+    <label for="{{ category|lower|replace(" ", "_") }}_comments_checkbox">Additional comments</label><br>
+    <textarea id="{{ category|lower|replace(" ", "_") }}_comments" name="{{ category|lower|replace(" ", "_") }}_comments" style="display:none;"></textarea>
+    <br>
+{% endfor %}
+
+        <input type="submit" value="Submit">
+    </form>
+<!-- The Modal -->
+<div id="confirmationModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h4>Termination Form Confirmation</h4>
+    <p>Job Number: <span id="modalJobNumber"></span></p>
+    <p>Job Name: <span id="modalJobName"></span></p>
+    <p>Team Member Name: <span id="modalTeamMemberName"></span></p>
+    <p>Employee Number: <span id="modalEmployeeNumber"></span></p>
+    <button id="submitFormButton">Submit</button>
+    <button id="cancelFormButton">Cancel</button>
+  </div>
+</div>
+
+<form action="{{ url_for('employeetermform.add_to_employeemasterlist') }}" method="POST">
+    <button type="submit">Add Termed Employee to Employee Master List</button>
+</form>
+
+    <script>
+  function updateSliderValue(slider) {
+    const valueBox = slider.nextElementSibling;
+    valueBox.value = slider.value;
+  }
+
+  // Set event listeners for sliders
+  document.querySelectorAll('input[type="range"]').forEach(slider => {
+    slider.addEventListener('input', () => {
+      updateSliderValue(slider);
+    });
+  });
+
+  // Conditional display of question 6
+  document.querySelectorAll('input[name="termination_type"]').forEach(radio => {
+    radio.addEventListener('change', () => {
+      if (radio.value !== 'no_call_no_show' && radio.value !== 'discharged') {
+        document.getElementById('question_6').style.display = 'block';
+      } else {
+        document.getElementById('question_6').style.display = 'none';
+      }
+    });
+  });
+
+  // Display additional comments textarea based on the checkbox state
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      const commentsId = checkbox.id.replace('_checkbox', '');
+      document.getElementById(commentsId).style.display = checkbox.checked ? 'block' : 'none';
+    });
+  });
+
+  // Get the modal and button elements
+  const confirmationModal = document.getElementById("confirmationModal");
+  const submitFormButton = document.getElementById("submitFormButton");
+  const cancelFormButton = document.getElementById("cancelFormButton");
+
+  // Open the modal and populate the content
+  function openModal() {
+    const jobNumber = document.getElementById("job_number").value;
+    const teamMemberName = document.getElementById("team_member_name").value;
+    const employeeNumber = document.getElementById("employee_number").value;
+    const jobname = document.getElementById("jobname").value;
+
+
+    document.getElementById("modalJobNumber").textContent = jobNumber;
+    document.getElementById("modalTeamMemberName").textContent = teamMemberName;
+    document.getElementById("modalEmployeeNumber").textContent = employeeNumber;
+    document.getElementById("modalJobName").textContent = jobname;
+    confirmationModal.style.display = "block";
+  }
+
+  // Close the modal
+  function closeModal() {
+    confirmationModal.style.display = "none";
+  }
+
+  // When the user clicks the "Submit" button, close the modal and submit the form
+  submitFormButton.addEventListener("click", () => {
+    closeModal();
+    // Replace `formID` with the actual ID of your form
+    document.getElementById("termForm").submit();
+  });
+
+  // When the user clicks the "Cancel" button, close the modal without submitting the form
+  cancelFormButton.addEventListener("click", () => {
+    closeModal();
+  });
+</script>
+
+{% endblock %}

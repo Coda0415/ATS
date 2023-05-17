@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<div class="container">
+    <form action="#" method="post">
+        <div class="inline">
+            <label for="firstname">First name</label>
+            <input type="text" name="firstname" id="firstname" required>
+        </div>
+        <input type="hidden" name="position_id" value="{{ position_id }}">
+        <input type="hidden" name="regional_manager" value="{{ regional_manager }}">
+        <input type="hidden" name="account_manager" value="{{ account_manager }}">
+        <input type="hidden" name="job_number" value="{{ job_number }}">
+        <div class="inline">
+            <label for="lastname">Last name</label>
+            <input type="text" name="lastname" id="lastname" required>
+        </div>
+        <br>
+        <label for="address">Street address</label>
+        <input type="text" name="address" id="address" required>
+        <br>
+        <div class="inline">
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" required>
+        </div>
+        <div class="inline">
+            <label for="state">State/Region</label>
+            <input type="text" name="state" id="state" required>
+        </div>
+        <br>
+        <div class="inline">
+            <label for="phone">Phone number</label>
+            <input type="tel" name="phone" id="phone" required>
+        </div>
+        <div class="inline">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <br>
+        <div class="inline">
+            <label for="are_you_at_least_18_years_old_">Are you at least 18 years old?</label>
+            <input type="radio" name="are_you_at_least_18_years_old_" id="Yes" value="Yes" required>
+            <label for="Yes">Yes</label>
+            <input type="radio" name="are_you_at_least_18_years_old_" id="No" value="No">
+            <label for="No">No</label>
+        </div>
+        <div class="inline">
+            <label for="are_you_legally_eligible_to_work_in_the_us_">Are you legally eligible to work in the US?</label>
+            <input type="radio" name="are_you_legally_eligible_to_work_in_the_us_" id="Yes" value="Yes" required>
+            <label for="Yes">Yes</label>
+            <input type="radio" name="are_you_legally_eligible_to_work_in_the_us_" id="No" value="No">
+            <label for="No">No</label>
+        </div>
+        <br>
+        <label for="have_you_ever_applied_or_been_employed_by_frantz_building_services_">Have you ever applied or been employed by Frantz Building Services?</label>
+<input type="radio" name="have_you_ever_applied_or_been_employed_by_frantz_building_services_" id="Yes" value="Yes" required>
+<label for="Yes">Yes</label>
+<input type="radio" name="have_you_ever_applied_or_been_employed_by_frantz_building_services_" id="No" value="No">
+<label for="No">No</label>
+<br>
+<div id="previous-employment" class="hidden">
+    <label for="please_list_the_dates_of_application_or_employment__position_title__and_reason_for_leaving_">Please list the dates of application or employment, position title, and reason for leaving.</label>
+    <input type="text" name="please_list_the_dates_of_application_or_employment__position_title__and_reason_for_leaving_" id="please_list_the_dates_of_application_or_employment__position_title__and_reason_for_leaving_">
+</div>
+<br>
+<input type="hidden" name="subject" id="subject">
+<input type="hidden" name="content" id="content">
+<input type="hidden" name="position_applying_for_" id="position_applying_for_">
+<div class="inline">
+    <label for="are_you_looking_for_full_time_or_part_time_employment_">Are you looking for full-time or part-time employment?</label>
+    <input type="radio" name="are_you_looking_for_full_time_or_part_time_employment_" id="full_time" value="Full-time" required>
+    <label for="full_time">Full-time</label>
+    <input type="radio" name="are_you_looking_for_full_time_or_part_time_employment_" id="part_time" value="Part-time">
+    <label for="part_time">Part-time</label>
+</div>
+<div class="inline">
+    <label for="do_you_have_2_forms_of_identification__are_they_valid_and_are_they_hard_copies_">Do you have 2 forms of identification? Are they valid and are they hard copies?</label>
+    <input type="radio" name="do_you_have_2_forms_of_identification__are_they_valid_and_are_they_hard_copies_" id="Yes" value="Yes" required>
+    <label for="Yes">Yes</label>
+    <input type="radio" name="do_you_have_2_forms_of_identification__are_they_valid_and_are_they_hard_copies_" id="No" value="No">
+    <label for="No">No</label>
+</div>
+<br>
+<div class="inline">
+    <label for="date_available_to_start_work_">Date available to start work?</label>
+    <input type="date" name="date_available_to_start_work_" id="date_available_to_start_work_" required>
+</div>
+<div class="inline">
+    <label for="best_way_to_contact_you_">Best way to contact you?</label>
+    <input type="checkbox" name="best_way_to_contact_you_" id="text" value="Text" required>
+    <label for="text">Text</label>
+    <input type="checkbox" name="best_way_to_contact_you_" id="Call" value="Phone Call">
+    <label for="Call">Call</label>
+    <input type="checkbox" name="best_way_to_contact_you_" id="Email" value="Email">
+<label for="Email">Email</label>
+</div>
+<br>
+<h2>Previous Employer</h2>
+<div class="inline">
+    <label for="company">Company name</label>
+    <input type="text" name="company" id="company" required>
+</div>
+<div class="inline">
+    <label for="jobtitle">Job title</label>
+    <input type="text" name="jobtitle" id="jobtitle" required>
+</div>
+<br>
+<div class="inline">
+    <label for="start">Start date</label>
+    <input type="date" name="start" id="start" required>
+</div>
+<div class="inline">
+    <label for="end">End date</label>
+    <input type="date" name="end" id="end" required>
+</div>
+<div>
+    <input type="checkbox" name="still_work_here" id="still_work_here">
+    <label for="still_work_here">I still work here</label>
+</div>
+<br>
+<div class="inline">
+    <label for="job_location">Job location</label>
+    <input type="text" name="job_location" id="job_location" required>
+</div>
+<div class="inline">
+    <label for="duties">Duties</label>
+    <input type="text" name="duties" id="duties" required>
+</div>
+<br>
+<label for="reason_for_leaving">Reason for leaving</label>
+<input type="text" name="reason_for_leaving" id="reason_for_leaving" required>
+<br>
+<div class="inline">
+    <label for="supervisor_name">Supervisor name</label>
+    <input type="text" name="supervisor_name" id="supervisor_name" required>
+</div>
+<div class="inline">
+    <label for="supervisor__phone_number">Supervisor phone number</label>
+    <input type="tel" name="supervisor__phone_number" id="supervisor__phone_number" required>
+</div>
+<br>
+<label for="may_we_contact_this_employer_">May we contact the employer?</label>
+<input type="radio" name="may_we_contact_this_employer_" id="Yes" value="Yes" required>
+<label for="Yes">Yes</label>
+<input type="radio" name="may_we_contact_this_employer_" id="No" value="No">
+<label for="No">No</label>
+<div id="explain-no-contact" class="hidden">
+    <label for="no_contact_explanation">If no, please explain:</label>
+    <input type="text" name="no_contact_explanation" id="no_contact_explanation">
+</div>
+<br>
+<div class="inline">
+    <label for="name_of_one_person_who_would_confirm_how_great_an_employee_you_are">Name of One Person Who Would Confirm How Great of an Employee You Are:</label>
+    <input type="text" name="name_of_one_person_who_would_confirm_how_great_an_employee_you_are" id="name_of_one_person_who_would_confirm_how_great_an_employee_you_are" required>
+</div>
+<div class="inline">
+    <label for="their_phone_number">Their Phone Number</label>
+    <input type="tel" name="their_phone_number" id="their_phone_number" required>
+</div>
+<br>
+<input type="submit" value="Submit">
+</form>
+</div>
+{% endblock %}

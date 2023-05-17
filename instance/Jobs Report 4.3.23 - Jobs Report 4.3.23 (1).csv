@@ -1,0 +1,547 @@
+JobNumber,JobDescription,JobAddress1,JobCity,JobState,JobZip,Tier5_Description,RegionalManager,AccountManager,LocationDescription
+[NONE-2],"Balance Sheet - Tong Enterprises, LLC",319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Britney Chilton,Inactive,Tong Enterprises LLC
+[NONE-3],"Balance Sheet - Tong Electrical Solutions, Inc.",319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Electrical Services
+[NONE-4],"Balance Sheet - Frantz Construction, Inc.",319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Back Office Branch
+[NONE-5],Balance Sheet - Bigger Barns LLC,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Owensboro Branch
+[NONE],"Balance Sheet - Frantz Building Services, Inc",319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Owensboro Branch
+1134-1,Glenmore,2001 E 4th St,Owensboro,KY,42303-0147,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1135-1,US Bank - Frederica  (#4550),700 Frederica St,Owensboro,KY,42301-3028,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-2,US Bank - Carter Road (#4553),1701 Carter Rd,Owensboro,KY,42301-3406,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-4,US Bank - New Hartford  (#4558),2701 New Hartford Rd,Owensboro,KY,42303-1318,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-7,US Bank - Henderson (#4469),501 Barrett Blvd,Henderson,KY,42420-2675,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+1135-8,US Bank - Mortgage (#4551),4801 Frederica St,Owensboro,KY,42301-7441,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-9,US Bank - Moreland (#4416),800 Moreland St,Owensboro,KY,42301-2046,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-11,US Bank - Mortgage Dayporter (#4551),4801 Frederica St,Owensboro,KY,42301-7441,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-12,US Bank - Fulton Drive (#4555),4801 Frederica st,Owensboro,KY,42301-7441,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1138-1,Hunter Douglas - Weekend,1600 Ragu Dr,Owensboro,KY,42303-1414,Commercial /  Corporate Campus,Britney Chilton,Sammie Kidd,Evansville Region
+1170-1,Hines Precision,5680 Old Highway 54,Philpot,KY,42366-9645,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1170-2,Owensboro Manufacturing,3001 Tamarack Rd,Owensboro,KY,42301-6565,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1221-1,ONB - Owensboro Main (#133),123 W 4th St,Owensboro,KY,42303-4157,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+1221-4,ONB - Owensboro Hwy 54 (#220),3230 Mount Moriah Ave,Owensboro,KY,42303-7805,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+1221-6,ONB - Tell City Main (#025A/025B),529 Main St,Tell City,IN,47586-2210,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+1221-8,ONB - Tell City - Old Hwy Rd (#027),133 Old Highway Rd,Tell City,IN,47586-2771,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+1237-2,Commonwealth Rolled Products,1372 State Route 1957,Lewisport,KY,42351-6968,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1257-1,OPS - Central Office,450 Griffith Ave,Owensboro,KY,42301-3620,Education - K-12,Britney Chilton,Sammie Kidd,Evansville Region
+1257-3,OPS Hager Preschool,1701 W 7th St,Owensboro,KY,42301-1955,Education - K-12,Inactive,Sammie Kidd,Evansville Region
+1257-5,OPS - Sutton Elementary School,2600 Lewis Ln,Owensboro,KY,42301-5321,Education - K-12,Britney Chilton,Sammie Kidd,Evansville Region
+1257-6,OPS - Foust Elementary,601 Foust Ave,Owensboro,KY,42301-1961,Education - K-12,Britney Chilton,Sammie Kidd,Evansville Region
+1258-2,ATTC Manufacturing - KK Building,735 McDaniel St,Troy,IN,47588,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+500,Tong Enterprises Corporate Job,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Tong Enterprises LLC
+600,Bigger Barns,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Jordan Tong,Bigger Barns LLC
+602,4212 Jefferson Street,4212 Jefferson St,Owensboro,KY,42303-7358,Inactive,Inactive,Inactive,Bigger Barns LLC
+1133,Owensboro Specialty Polymers,5529 Highway 2830,Owensboro,KY,42303-9703,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1138,Hunter Douglas,1600 Ragu Dr,Owensboro,KY,42303-1414,Commercial /  Corporate Campus,Britney Chilton,Sammie Kidd,Evansville Region
+1148,Kimberly Clark,601 Innovative Way,Owensboro,KY,42301-8436,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1184,NOF - Fordsville,16968 State Route 69 N,Fordsville,KY,42343-9373,Manufacturing,Steven Kidd,Steven Kidd,Bowling Green Region
+1199,Owensboro Training Labor,319 E 2nd St,Owensboro,KY,42303-4203,Commercial /  Corporate Campus,Britney Chilton,Brian Lewis,Owensboro Branch
+1203,Owensboro Administration,319 E 2nd st,Owensboro,KY,42303-4203,Inactive,Inactive,Brian Lewis,Owensboro Branch
+1222,Unifirst,2801 Unifirst Dr,Owensboro,KY,42301-7701,Commercial /  Corporate Campus,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1243,Ken-tron Manufacturing,610 Industrial Dr,Owensboro,KY,42301-0187,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1244,Dart Polymers,2400 Harbor Rd,Owensboro,KY,42301-9268,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1249,Webb Wheel Products,9840 IN 66,Tell City,IN,47586-8581,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1254,Cloverport Independent Schools,301 Poplar St,Cloverport,KY,40111-1356,Education - K-12,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1256,Mizkan,1901 Ragu Dr,Owensboro,KY,42303-1421,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1258,ATTC Manufacturing,10455 State Road 37,Tell City,IN,47586-8322,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1260,Domtar,Highway 1406,Hawesville,KY,42348,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1263,Swedish Match - Back Square,5030 Back Square Dr,Owensboro,KY,42301-7413,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+3100,Bowling Green Operations,1026 E 13th Ave,Bowling Green,KY,42104-3082,Commercial /  Corporate Campus,Steven Kidd,Steven Kidd,Bowling Green Region
+3104,New Sales - Bowling Green,1026 E 13th Ave,Bowling Green,KY,42104-3082,Inactive,Inactive,Inactive,Bowling Green Region
+3116,AFNI,2625 Scottsville Rd,Bowling Green,KY,42104-4477,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3119,WestRock,225 Mitch McConnell Way,Bowling Green,KY,42101-7516,Manufacturing,Steven Kidd,Kathy Hogue,Bowling Green Region
+3121,Bowling Green Metalforming,111 Cosma Dr,Bowling Green,KY,42101-8047,Manufacturing,Steven Kidd,Valerie Rankin,Bowling Green Region
+3125,Bilstein Cold Rolled Steel,1491 Commonwealth Blvd,Bowling Green,KY,42101,Manufacturing,Steven Kidd,Kathy Hogue,Bowling Green Region
+3131,Living Hope Baptist Church,1805 Westen St,Bowling Green,KY,42104-4151,Church,Steven Kidd,Debra Murphy,Bowling Green Region
+3133,Fruit of the Loom,1 Fruit Of The Loom Dr,Bowling Green,KY,42103-7932,Manufacturing,Steven Kidd,Kesha Hall,Bowling Green Region
+3136,448 Golden Autumn Way,165 Natchez Trace Ave,Bowling Green,KY,42103-7940,Commercial /  Corporate Campus,Steven Kidd,Eric Johnson,Bowling Green Region
+3139,Toyo Automotive,521 Page Dr,Franklin,KY,42134-6243,Manufacturing,Steven Kidd,Debra Murphy,Bowling Green Region
+3140,Greenview Surgery Center,484 Golden Autumn Way,Bowling Green,KY,42103,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3142,Smuckers,1070 Smith Grove Rd,Scottsville,KY,42164-9444,Manufacturing,Steven Kidd,Tammy Wolfe,Bowling Green Region
+3144,National Corvette Museum,350 Corvette Dr,Bowling Green,KY,42101-9134,Public Venue,Steven Kidd,Kesha Hall,Bowling Green Region
+3200,Corporate Administrative - KY,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Lisa Benton,Corporate Branch
+3202,IN Corporate Managerial,2626 Kotter Ave Ste D,Evansville,IN,47715-8530,Inactive,Inactive,Inactive,Corporate Branch
+3203,Sales - Corporate,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive Job,Brian Lewis,Corporate Branch
+3204,Sales - In-House,329 E. 2nd Street,Owensboro,KY,42306,Inactive,Inactive,Brian Lewis,Corporate Branch
+3205,Shareholder Salary (Jordan Tong),319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Corporate Branch
+3298,Personal Janitorial Work,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Britney Chilton,Britney Chilton,Corporate Branch
+3299,Corporate Janitorial Work,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Britney Chilton,Britney Chilton,Corporate Branch
+3300,Elite Business Coaching,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Jordan Tong,Corporate Branch
+4100,Evansville Operations,2626 Kotter Ave Ste D,Evansville,IN,47715-8530,Inactive,Britney Chilton,Britney Chilton,Evansville Region
+4101,New Sales - Evansville,2626 Kotter Ave Ste D,Evansville,IN,47715-8530,Inactive,Inactive,Brian Lewis,Evansville Region
+4110,Madisonville State Office Building,625 Hospital Dr,Madisonville,KY,42431-1682,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4122,Accuride - Corporate,7140 Office Cir,Evansville,IN,47715-8235,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4130,Kimball - 15th Street,1037 E 15th St,Jasper,IN,47546-2226,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4133,St Vincent Urological,920 S Hebron Ave,Evansville,IN,47714-4086,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4136,NOF - Jasper - 11th Ave,340 E 11th Ave,Jasper,IN,47549-1005,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4137,Century Aluminum,9404 State Route 2096,Robards,KY,42452-9735,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4147,Continental Mills,100 Krusteaz Way,Hopkinsville,KY,42240-6809,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4153,Columbia Sportswear,2001 Northern Star Way,Robards,KY,42452-9370,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4155,Sonoco,3100 Ohio Dr,Henderson,KY,42420-5045,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4156,Sabic,1 Lexan Ln,Mount Vernon,IN,47620-9367,Manufacturing,Britney Chilton,Brandy Williams,Evansville Region
+4161,Deaconess - Pediatrics Elm Street,2000 N Elm St,Henderson,KY,42420-2385,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4168,Metalsa - Hopkinsville,301 Bill Bryan Blvd,Hopkinsville,KY,42240-6811,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4176,Tungco,3955 Anton Rd,Madisonville,KY,42431-8533,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4180,Kimball Electronics Corp - Headquarters,1205 Kimball Blvd,Jasper,IN,47546-0017,Commercial /  Corporate Campus,Britney Chilton,Sarah Bradley,Evansville Region
+4201,Evansville Account Manager,2626 Kotter Ave Ste D,Evansville,IN,47715-8530,Inactive,Britney Chilton,Britney Chilton,Evansville Region
+4202,Evansville Regional Manager,2626 Kotter Ave Suites BC,Evansville,IN,47715-8530,Inactive,Britney Chilton,Britney Chilton,Evansville Region
+4217,NOF - Headquarters - Jasper,1610 Royal Street,Jasper,IN,47546,Commercial /  Corporate Campus,Britney Chilton,Sarah Bradley,Evansville Region
+4218,Kimball Health Center - Jasper,1620 Cherry St. Suite A,Jasper,IN,47546,Medical Outpatient,Britney Chilton,Sarah Bradley,Evansville Region
+4226,Red Spot Paint,1107 E Louisiana St,Evansville,IN,47711-4747,Manufacturing,Britney Chilton,Brandy Williams,Evansville Region
+5109,3M,400 Swinging Bridge Rd,Old Hickory,TN,37138-3512,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+6100,Elizabethtown Operations,200 Altec Dr,Elizabethtown,KY,42701-4501,Inactive,Angie Compton,Brian Lewis,Elizabethtown Region
+6101,Monument Chemical,2450 Olin Rd,Brandenburg,KY,40108-9508,Manufacturing,Angie Compton,Angie Compton,Elizabethtown Region
+6102,Altec,200 Altec Dr,Elizabethtown,KY,42701-4501,Manufacturing,Angie Compton,Adoria Pruitt,Elizabethtown Region
+6104,Altec - 0443 Bldg 205 Svc Center,205 Altec Dr,Elizabethtown,KY,42701,Commercial /  Corporate Campus,Angie Compton,Adoria Pruitt,Elizabethtown Region
+6105,AGC - Elizabethtown,1 Auto Glass Dr,Elizabethtown,KY,42701-4500,Manufacturing,Angie Compton,Julian Gulley,Elizabethtown Region
+6108,AGC - Bellefontaine,1465 W Sandusky Ave,Bellefontaine,OH,43311-1082,Manufacturing,Angie Compton,Amber Beach,Elizabethtown Region
+6201,New Sales - Elizabethtown,200 Altec Dr,Elizabethtown,KY,42701-4501,Inactive,Angie Compton,Brian Lewis,Elizabethtown Region
+6202,Elizabethtown Regional Manager,200 Altec Dr,Elizabethtown,KY,42701-4501,Inactive,Angie Compton,Brian Lewis,Elizabethtown Region
+6204,Elizabethtown Account Manager,200 Altec Dr,Elizabethtown,KY,42701-4501,Inactive,Angie Compton,Brian Lewis,Elizabethtown Region
+7100,Bloomington Operations,5699 W State Road 45,Bloomington,IN,47403-9363,Commercial /  Corporate Campus,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7101,New Sales - Bloomington,5699 W State Road 45,Bloomington,IN,47403-9363,Commercial /  Corporate Campus,Desmond Carpenter,Inactive,Bloomington Region
+7102,Bloomington Regional Manager,5699 W State Road 45,Bloomington,IN,47403-9363,Commercial /  Corporate Campus,Desmond Carpenter,Inactive,Bloomington Region
+7104,Bloomington Account Manager,5699 W State Road 45,Bloomington,IN,47403-9363,Commercial /  Corporate Campus,Desmond Carpenter,Inactive,Bloomington Region
+7201,Toyota Industrial Equipment,5555 Inwood Dr,Columbus,IN,47201-9755,Manufacturing,Desmond Carpenter,Aaron Pitzer,Bloomington Region
+7204,Cook Medical - Spencer,1100 W Morgan St,Spencer,IN,47460-9426,Medical Outpatient,Desmond Carpenter,Steven Simmons,Bloomington Region
+7207,Dorel Juvenile Group,500 S. Gladstone Ave,Columbus,IN,47201,Manufacturing,Desmond Carpenter,Aaron Pitzer,Bloomington Region
+7211,SIRA Imaging Center,500 S Landmark Ave,Bloomington,IN,47403-3239,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7215,Singota Solutions,4320 W Zenith Dr,Bloomington,IN,47404-7401,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7217,Faith Lutheran Church,2200 S High St,Bloomington,IN,47401-4313,Church,Desmond Carpenter,Vicki Southern,Bloomington Region
+7218,The Fields,1333 S Fenbrook Ln,Bloomington,IN,47401-4263,Education - University,Desmond Carpenter,Vicki Southern,Bloomington Region
+7221,Cook Aviation,970 S Kirby Rd,Bloomington,IN,47403-9392,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7222,Bloomington Government Offices,1547 S. Curry Pike,Bloomington,IN,47403,Government,Desmond Carpenter,Vicki Southern,Bloomington Region
+7224,Kite Realty,7426 Fishers Station Dr,Fishers,IN,46038-2323,Commercial /  Corporate Campus,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7225,KBSO Consulting,1344 S Rangeline Rd Ste 202,Carmel,IN,46032-2932,Commercial /  Corporate Campus,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7226,Upland Brewing Company,4060 W Profile Pkwy,Bloomington,IN,47404-2554,Manufacturing,Desmond Carpenter,Vicki Southern,Bloomington Region
+7227,Spectrum Brands,20975 Creek Rd,Noblesville,IN,46060-9383,Manufacturing,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7230,Bedford Ford / Bedford Chrysler,10050 State Road 37,Bedford,IN,47421-6421,Commercial /  Corporate Campus,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7232,Indiana Hydraulic Equipment Corp.,2000 Commerce Pkwy,Franklin,IN,46131-6966,Manufacturing,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7233,Bloomington Surgery Center,1011 W 2nd St,Bloomington,IN,47403-2216,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7234,Spencer United Methodist Church,95 W Franklin St,Spencer,IN,47460-1725,Church,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7237,AAM Metalforming,2805 Norcross Dr,Columbus,IN,47201-4911,Manufacturing,Desmond Carpenter,Aaron Pitzer,Bloomington Region
+7238,Surgicare,2907 S McIntire Dr Ste C,Bloomington,IN,47403-4224,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7407,Sims Painting,640 N Diana Dr,Ellettsville,IN,47429-1618,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+9999,Team Time Last Resort Job,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Owensboro Branch
+20000,Back Office Branch - KY,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive Job,Jordan Tong,Back Office Branch
+20001,Frantz Admin (No Branch Assignment) KY,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Jordan Tong,Back Office Branch
+20002,Frantz Admin (No Branch Assignment) IN,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Jordan Tong,Back Office Branch
+20003,Shareholder Salary (Mark Tong),319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Back Office Branch
+20102,Jordan Tong - Personal,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive Job,Brian Lewis,Back Office Branch
+20126,Corporate Office Job,310 E 22nd St,Owensboro,KY,42303-3815,Inactive,Inactive,Jordan Tong,Back Office Branch
+20200,Jordan Tong - Personal,3141 Oakridge Ct,Owensboro,KY,42303-2765,Inactive,Inactive,Jordan Tong,Back Office Branch
+20201,Mark Tong - Personal,3119 Brent Gray Trce,Owensboro,KY,42303-2720,Inactive,Inactive,Jordan Tong,Back Office Branch
+20202,Common Good - Mark Tong & Jordan Tong,3119 Brent Gray Trce,Owensboro,KY,42303-2720,Inactive,Inactive,Jordan Tong,Back Office Branch
+3101-1,Bowling Green Account Manager,1026 E 13th Ave,Bowling Green,KY,42104-3082,Inactive,Inactive,Brian Lewis,Bowling Green Region
+3102-1,Bowling Green Regional Manager,1026 E 13th Ave,Bowling Green,KY,42104-3082,Commercial /  Corporate Campus,Inactive,Brian Lewis,Bowling Green Region
+3121-1,Bowling Green Metalforming - Weekend,111 Cosma Dr,Bowling Green,KY,42101-8047,Manufacturing,Steven Kidd,Valerie Rankin,Bowling Green Region
+3122-1,Franklin Primary Care,1020 S Main St,Franklin,KY,42134-2370,Medical Outpatient,Steven Kidd,Debra Murphy,Bowling Green Region
+3122-4,Franklin Physical Therapy,1020 S Main St,Franklin,KY,42134-2370,Medical Outpatient,Steven Kidd,Debra Murphy,Bowling Green Region
+3127-1,US Bank - East Main (#4432),500 E Main Ave,Bowling Green,KY,42101-2226,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-4,US Bank - Campbell Lane (#4430),721 Campbell Ln,Bowling Green,KY,42104-1040,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-5,US Bank - Cave Mill Road (#4431),1970 Cave Mill Rd,Bowling Green,KY,42104-6337,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-6,US Bank - Lain Ave (#4434),810 Lain Ave,Bowling Green,KY,42101-4908,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-7,US Bank - Louisville Road (#4436),3240 Louisville Rd,Bowling Green,KY,42101-7103,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-9,US Bank - South Main (#4462),910 S Main St,Franklin,KY,42134-2365,Commercial /  Corporate Campus,Steven Kidd,Debra Murphy,Bowling Green Region
+3127-10,US Bank - Russelville (#4587),135 W 4th St,Russellville,KY,42276-1301,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-1,Graves Gilbert - Main Office,201 Park St,Bowling Green,KY,42101-1759,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-2,Graves Gilbert - Family Care,2724 Nashville Rd,Bowling Green,KY,42101-4000,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-3,Graves Gilbert - The Depot,410 Kentucky Ave,Bowling Green,KY,42101,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-5,Graves Gilbert - Family Care - Weekend,2724 Nashville Rd,Bowling Green,KY,42101-4000,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-6,Graves Gilbert - Franklin,1112 S Main St,Franklin,KY,42134-2322,Medical Outpatient,Steven Kidd,Debra Murphy,Bowling Green Region
+3128-8,Graves Gilbert - Dr. Granese,720 2nd Ave,Bowling Green,KY,42101-1778,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-9,Graves Gilbert - Surgery Center,165 Natchez Trace Ave,Bowling Green,KY,42103-7940,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-10,Graves Gilbert - Brownsville,100 Park Pl Ste 6,Brownsville,KY,42210-9036,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-11,Graves Gilbert - Walk-in Clinic,1225 Fairway St,Bowling Green,KY,42103-2477,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-12,Graves Gilbert - Scottsville Road,5575 Scottsville Rd,Bowling Green,KY,42104-6800,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3131-1,Living Hope Baptist Church - Weekend,1805 Westen St,Bowling Green,KY,42104-4151,Church,Steven Kidd,Debra Murphy,Bowling Green Region
+3132-1,Fritz Winter,1 Fritz Winter Dr,Franklin,KY,42134,Manufacturing,Steven Kidd,Debra Murphy,Bowling Green Region
+3132-2,Fritz Winter - Weekend,1 Fritz Winter Dr,Franklin,KY,42134,Manufacturing,Steven Kidd,Debra Murphy,Bowling Green Region
+3142-1,Smuckers - Weekend,1070 Smith Grove Rd,Scottsville,KY,42164-9444,Manufacturing,Steven Kidd,Tammy Wolfe,Bowling Green Region
+3142-2,Smuckers - 3rd Shift - Weekend,1070 Smith Grove Rd,Scottsville,KY,42164-9444,Manufacturing,Steven Kidd,Tammy Wolfe,Bowling Green Region
+3142-3,Smuckers - Temp Office,1070 Smith Grove Rd,Scottsville,KY,42164-9444,Manufacturing,Steven Kidd,Tammy Wolfe,Bowling Green Region
+3144-1,National Corvette Museum - Weekend,350 Corvette Dr,Bowling Green,KY,42101-9134,Public Venue,Steven Kidd,Kesha Hall,Bowling Green Region
+3200-1,KY Sales Quarterly Incentive Payouts,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Corporate Branch
+3200-2,KY Janitorial Quarterly Incentive Payouts,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Corporate Branch
+3200-3,IN Sales - Quarterly Incentive Payout,2626 Kotter Ave Suites BC,Evansville,IN,47715-8530,Inactive,Inactive,Britney Chilton,Evansville Region
+3200-4,IN Janitorial  - Quarterly Incentive Payout,2626 Kotter Ave Suites BC,Evansville,IN,47715-8530,Inactive,Inactive,Britney Chilton,Evansville Region
+3200-5,TN Sales Quarterly Incentive Payouts,806 Albin Ct,La Vergne,TN,37086-3130,Inactive,Inactive,Inactive,Corporate Branch
+3200-6,TN Janitorial Quarterly Incentive Payouts,806 Albin Ct,La Vergne,TN,37086-3130,Inactive,Inactive,Inactive,Corporate Branch
+3200-7,Corporate Administrative - IN,2626 Kotter Ave,Evansville,IN,47715-8530,Inactive,Inactive,Inactive,Corporate Branch
+4105-1,Accuride - Plant,2315 Adams Ln,Henderson,KY,42420-4593,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4105-2,Accuride - Lab,2315 Adams Ln,Henderson,KY,42420-4593,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4123-3,Deaconess - Wilder,1413 N Elm St,Henderson,KY,42420-2768,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-9,Deaconess - Letcher Street,411 Letcher St,Henderson,KY,42420-4245,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-11,Deaconess - Klutey Park - Ortho,471 Klutey Park Plaza Dr,Henderson,KY,42420-3347,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4143-2,Kimball Hospitality - T&M,1180 E 16th St,Jasper,IN,47549-1009,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4144-1,NOF - Santa Claus,1255 W Christmas Blvd,Santa Claus,IN,47579-8533,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+4146-2,ONB - Washington & KY (#003),961 Washington Ave,Evansville,IN,47713-2238,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-3,ONB - West Side (#004A/004B),2121 W Franklin St,Evansville,IN,47712-5167,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-5,ONB - Hebron (#007),4500 Washington Ave,Evansville,IN,47714-0893,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-6,ONB - University Square (#008),1925 Lincoln Ave,Evansville,IN,47714-1507,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-7,ONB - North Brook (#009),3888 N 1st Ave,Evansville,IN,47710-3326,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-8,ONB - Darmstadt (#010),544 Boonville New Harmony Rd,Evansville,IN,47725-9592,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-9,ONB - Red Bank (#013),5124 Pearl Dr,Evansville,IN,47712-8109,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-10,ONB - Bell Oaks (# 014),8577 Ruffian Ln,Newburgh,IN,47630-3400,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-11,ONB - Boonville (#017),224 W Main St,Boonville,IN,47601-3008,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-12,ONB - Mt. Vernon Main (#022),402 Main St,Mount Vernon,IN,47620-1844,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4157-1,MSHA  Building,100 YMCA Dr,Madisonville,KY,42431-9000,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4160-1,Deaconess - Mt. Pleasant,8600 N Kentucky Ave,Evansville,IN,47725-6302,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-3,Deaconess - Lynch Road,"4949 Healthy Way, Suite A",Evansville,IN,47715,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-4,Deaconess - Boehne Camp,545 S Boehne Camp Rd,Evansville,IN,47712-3703,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-5,Deaconess - Urgent Care Hwy 41,2242 US Highway 41 N,Henderson,KY,42420-2375,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4160-7,Deaconess - Gateway #3 Cardiac Rehab,4015 Gateway Blvd Ste 2122,Newburgh,IN,47630-9460,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-8,Deaconess - Gateway #3 Heart Group Suite 100,4015 Gateway Blvd Ste 100,Newburgh,IN,47630-8925,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-10,Deaconess - Gateway #3 Family Medicine - Suite 300,4015 Gateway Blvd Ste 300,Newburgh,IN,47630-8925,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-11,Deaconess - Gateway #3 GI Suite 3000,"4105 Gate Way Blvd, Suite 3000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-12,Deaconess - Gateway #3 Audiology Suite 4000,"4105 Gate Blvd, Suite 4000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4165-1,Masterbrand - Corporate,1 Masterbrand Cabinets Dr,Jasper,IN,47546-2248,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-2,Masterbrand - Training Center,1115 E 14th St,Jasper,IN,47546-2223,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-3,Masterbrand - Decora Plant 3,1491 S Meridian Rd,Jasper,IN,47546-3831,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-4,Masterbrand - Hangar Bay,2716 W 900S,Huntingburg,IN,47542-9628,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-5,Masterbrand - Ferdinand,624 W 3rd St,Ferdinand,IN,47532-9754,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4179-1,United Companies - 3420,3420 E Morgan Ave,Evansville,IN,47715-2264,Commercial /  Corporate Campus,Britney Chilton,Brandy Williams,Evansville Region
+4179-2,United Leasing - 3700,3700 E Morgan Ave,Evansville,IN,47715-2240,Commercial /  Corporate Campus,Britney Chilton,Brandy Williams,Evansville Region
+4212-1,Masterbrand - Huntingburg - Plant 01,1008 N Geiger St,Huntingburg,IN,47542-8914,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4212-5,Masterbrand - Huntingburg - Plant 5,1008 N Geiger St,Huntingburg,IN,47542-8914,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4213-1,US Smokeless Tobacco - Main Plant,1600 N Main St,Hopkinsville,KY,42240-2724,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4213-2,US Smokeless Tobacco - Eagle One,100 Weymans Way,Hopkinsville,KY,42240,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4213-3,US Smokeless Tobacco - Clarksville,102 Hornberger LN,Clarksville,TN,37040-3343,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4213-4,US Smokeless Tobacco - Springfield,301 10th Ave W,Springfield,TN,37172-3101,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4223-1,Escalade Sports - Main Office,817 Maxwell Ave,Evansville,IN,47711-3847,Warehourse / Distribution Center,Britney Chilton,Brandy Williams,Evansville Region
+4223-2,Escalade Sports - Stringtown Road,2200 Stringtown Rd,Evansville,IN,47711-3758,Warehourse / Distribution Center,Britney Chilton,Brandy Williams,Evansville Region
+5102-1,Alive Hospice - Nashville,1710 Patterson St,Nashville,TN,37203-2926,Medical Outpatient,Brian Lewis,Kim Jones,Clarksville Region
+5102-6,Alive Hospice - Murfreesboro,1629 Williams Dr,Murfreesboro,TN,37129-3183,Medical Outpatient,Brian Lewis,Kim Jones,Clarksville Region
+5132-1,CMHOF,222 Rep John Lewis Way S,Nashville,TN,37203-4206,Public Venue,Brian Lewis,Kimberly McConnell,Clarksville Region
+5132-2,CMHOF - Events,222 Rep John Lewis Way S,Nashville,TN,37203-4206,Public Venue,Brian Lewis,Kimberly McConnell,Clarksville Region
+5300-1,Clarksville Operations (TN),3525 Johnson Rd,Clarksville,TN,37040,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5301-1,New Sales - Clarksville,3525 Johnson Rd,Clarksville,TN,37040,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5302-1,Clarksville Regional Manager (TN),3525 Johnson Rd,Clarksville,TN,37040,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5302-2,Clarksville Regional Manager (KY),301 Bill Bryan Blvd,Hopkinsville,KY,42240-6811,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5304-1,Clarksville Account Manager (TN),3525 Johnson Rd,Clarksville,TN,37040,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5304-2,Clarksville Account Manager (KY),301 Bill Bryan Blvd,Hopkinsville,KY,42240-6811,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5399-1,Clarksville Training Labor (TN),3525 Johnson Rd,Clarksville,TN,37040,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5399-2,Clarksville Training Labor (KY),301 Bill Bryan Blvd,Hopkinsville,KY,42240-6811,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+6102-2,Altec - Weekend,200 Altec Dr,Elizabethtown,KY,42701-4501,Manufacturing,Angie Compton,Adoria Pruitt,Elizabethtown Region
+6102-3,Altec - COVID19 Disinfecting,200 Altec Dr,Elizabethtown,KY,42701-4501,Manufacturing,Angie Compton,Adoria Pruitt,Elizabethtown Region
+6103-1,Tower International - Bardstown,850 Withrow Ct,Bardstown,KY,40004-2649,Manufacturing,Angie Compton,Katrina Rabuck,Elizabethtown Region
+6103-2,Tower International - Shepherdsville,550 Cedar Grove Rd,Shepherdsville,KY,40165-6459,Manufacturing,Angie Compton,Angie Compton,Elizabethtown Region
+7203-1,Boston Scientific,780 Brookside Dr,Spencer,IN,47460-1080,Medical Outpatient,Desmond Carpenter,David Voorhees,Bloomington Region
+7205-1,IU Health - Landmark,550 S Landmark Ave,Bloomington,IN,47403-3239,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7205-2,IU Health - Ortho & Sports Medicine - 064,2605 E Creeks Edge Dr,Bloomington,IN,47401-8368,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-1,Hoosier Energy - Headquarters,7398 State Rd 37,Bloomington,IN,47404,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-2,Hoosier Energy - Owen County,204 IN 43,Spencer,IN,47460,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-3,Hoosier Energy - Worthington,3259 N US Highway 231,Switz City,IN,47465-7135,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-4,Hoosier Energy - Franklin Training,1000 S Old Palestine Rd,Mitchell,IN,47446-6862,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-5,Hoosier Energy - Bedford,3488 W. 100 S,Franklin,IN,46131,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7208-1,Northview - Carmel,12900 Hazel Dell Pkwy,Carmel,IN,46033-4665,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-2,Northview - Fishers,14842 E 136th St,Fishers,IN,46037-3481,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-3,Northview - Westfield,1191 W 186th St,Westfield,IN,46074-9213,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-4,Northview - Kokomo,3409 S 200 W,Kokomo,IN,46902-9613,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-5,Northview - Binford,6620 Northview Way,Indianapolis,IN,46220-4993,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-6,Northview - Anderson,1720 E 22nd St,Anderson,IN,46016-5700,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-7,Northview - West Lafayette,2703 Lindberg Rd,West Lafayette,IN,47906-5016,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-8,Northview - Flora,687 E 50 N,Flora,IN,46929-9681,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-9,Northview - Peru,421 W Canal St,Peru,IN,46970-1867,Church,Desmond Carpenter,Brian Lewis,Bloomington Region
+7214-1,IU Credit Union - Winslow Rd,105 E Winslow Rd,Bloomington,IN,47401-8689,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-2,IU Credit Union - Woodcrest Dr,410 S Woodscrest Dr,Bloomington,IN,47401-5373,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-3,IU Credit Union - ATM @ North Walnut,300 N Walnut St,Bloomington,IN,47404-3802,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-4,IU Credit Union - State Road 135,996 State Road 135,Greenwood,IN,46142,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-5,IU Credit Union -  Southpointe Dr,8936 Southpointe Dr Ste C6,Indianapolis,IN,46227-7506,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-6,IU Credit Union - N US Hwy 31,800 US Highway 31 S,Greenwood,IN,46143-2403,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-7,IU Credit Union - Business Center,365 E Winslow Rd,Bloomington,IN,47401-7327,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-8,IU Credit Union - E. 17th St,510 E 17th St,Bloomington,IN,47408-1500,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-9,IU Credit Union - Gates Dr,301 N Gates Dr,Bloomington,IN,47404-4842,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-10,IU Credit Union - W. State Rd 46,3801 W State Road 46,Bloomington,IN,47404-9644,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-11,IU Credit Union - Operations Center,4201 E Hagan St,Bloomington,IN,47401,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+1133-001,Owensboro Specialty Polymers - Add Service,5529 Highway 2830,Owensboro,KY,42303,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1134-001,Glenmore - Add Service,2001 E 4th st,owensboro,KY,42303-0147,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1135-1001,US Bank - Frederica (#4550) - Add Service,700 Frederica St,Owensboro,KY,42301-3028,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-12001,US Bank - Fulton Drive  (#4555) - Add Service,4801 Frederica st,Owensboro,KY,42301-7441,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-13,US Bank - OMHS  (#4625),1301 Pleasant Valley Rd Ste 105,Owensboro,KY,42303-9774,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-13001,US Bank - OMHS  (#4625) - Add Service,1301 Pleasant Valley Rd Ste 105,Owensboro,KY,42303-9774,Commercial /  Corporate Campus,Britney Chilton,Britney Chilton,Evansville Region
+1135-15,US Bank - Highland Point (#4615),3151 Highland Pointe Dr,Owensboro,KY,42303-7836,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-15001,US Bank - Highland Point (#4615) - Add Service,3151 Highland Pointe Dr,Owensboro,KY,42303-7836,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-16,US Bank - Mid-America Airpark (#4619),2800 Tamarack Rd,Owensboro,KY,42301-6566,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-16001,US Bank - Mid-America Airpark (#4619) - Add Servic,2800 Tamarack Rd,Owensboro,KY,42301-6566,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-18,US Bank - Moreland Dayporter (#4416),800 Moreland St,Owensboro,KY,42301-2046,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-19,US Bank - Highland Point Dayporter (#4615),3151 Highland Pointe Dr,Owensboro,KY,42303-7836,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-20,US Bank - Mid-America Airpark - Dayporter (#4619),2800 Tamarack Rd,Owensboro,KY,42301-6566,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-2001,US Bank - Carter Road (#4553) - Add Service,1701 Carter Rd,Owensboro,KY,42301-3406,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-21,US Bank - Fulton Drive - Day Porter (#4555),4801 Frederica st,Owensboro,KY,42301-7441,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-22,US Bank - Air Park Drive (#4624),2800 Tamarack Rd,Owensboro,KY,42301-6566,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-22001,US Bank - Air Park Drive (#4624) - Add Service,2800 Tamarack Rd,Owensboro,KY,42301-6566,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-23,US  Bank - Air Park - Day Porter  (#4624),2800 Tamarack Rd,Owensboro,KY,42301-6566,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-4001,US Bank - New Hartford  (#4558) - Add Service,2701 New Hartford Rd,Owensboro,KY,42303-1318,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-7001,US Bank - Henderson (#4469) - Add Service,501 Barrett Blvd,Henderson,KY,42420-2675,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+1135-8001,US Bank - Mortgage (#4551) - Add Service,4801 Frederica St,Owensboro,KY,42301-7441,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1135-9001,US Bank - Moreland (#4416) - Add Service,800 Moreland St,Owensboro,KY,42301-2046,Commercial /  Corporate Campus,Britney Chilton,Beth Lee,Evansville Region
+1138-001,Hunter Douglas - Add Service,1600 Ragu Dr,Owensboro,KY,42303-1414,Commercial /  Corporate Campus,Britney Chilton,Sammie Kidd,Evansville Region
+1148-001,Kimberly Clark - Add Service,601 Innovative Way,Owensboro,KY,42301-8436,Commercial /  Corporate Campus,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1170-1001,Hines Precision - Add Service,5680 Old Highway 54,Philpot,KY,42366-9645,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1170-2001,Owensboro Manufacturing - Add Service,3001 Tamarack Rd,Owensboro,KY,42301-6565,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1184-001,NOF - Fordsville - Add Service,16968 State Route 69 N,Fordsville,KY,42343-9373,Manufacturing,Steven Kidd,Steven Kidd,Bowling Green Region
+1221-1001,ONB - Owensboro Main (#133) - Add Service,123 W 4th St,Owensboro,KY,42303-4157,Commercial /  Corporate Campus,Steven Kidd,Donna McCarty,Evansville Region
+1221-3001,ONB - Owensboro Southtown (#135) - Add Service,1215 Southtown Blvd,Owensboro,KY,42301-7473,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+1221-4001,ONB - Owensboro Hwy 54 (#220) - Add Service,3230 Mount Moriah Ave,Owensboro,KY,42303-7805,Commercial /  Corporate Campus,Steven Kidd,Donna McCarty,Evansville Region
+1221-6001,ONB - Tell City Main (#025A/025B) - Add Service,529 Main St,Tell City,IN,47586-2210,Commercial /  Corporate Campus,Steven Kidd,Kyle Bartlett,Evansville Region
+1221-8001,ONB - Tell City - Old Hwy Rd - Add Service (#027),133 Old Highway Rd,Tell City,IN,47586-2771,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+1222-001,Unifirst - Add Service,2801 Unifirst Dr,Owensboro,KY,42301-7701,Commercial /  Corporate Campus,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1237-2001,Commonwealth Rolled- Calp Operations - Add Service,1372 State Route 1957,Lewisport,KY,42351-6968,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1243-001,Ken-tron Manufacturing. - Add Service,610 Industrial Dr,Owensboro,KY,42301-0187,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1244-001,Dart Polymers - Add Service,2400 Harbor Rd,Owensboro,KY,42301-9268,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1249-001,Webb Wheel Products - Add Service,9840 IN 66,Tell City,IN,47586-8581,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1253-001,Kenergy - Add Service,3111 Fairview Dr,Owensboro,KY,42303-2176,Commercial /  Corporate Campus,Britney Chilton,Sammie Kidd,Evansville Region
+1254-001,Cloverport Independent Schools - Add Service,301 Poplar St,Cloverport,KY,40111-1356,Education - K-12,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1256-001,Mizkan - Add Service,1901 Ragu Dr,Owensboro,KY,42303-1421,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+1257-1001,OPS - Central Office - Add Service,450 Griffith Ave,Owensboro,KY,42301-3620,Education - K-12,Britney Chilton,Sammie Kidd,Evansville Region
+1257-5001,OPS - Sutton Elementary School - Add Service,2600 Lewis Ln,Owensboro,KY,42301-5321,Education - K-12,Britney Chilton,Sammie Kidd,Evansville Region
+1257-6001,OPS - Foust Elementary - Add Service,601 Foust Ave,Owensboro,KY,42301-1961,Education - K-12,Britney Chilton,Sammie Kidd,Evansville Region
+1258-001,ATTC Manufacturing - Add Service,10455 State Road 37,Tell City,IN,47586-8322,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1260-001,Domtar - Add Service,Highway 1406,Hawesville,KY,42348,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+1263-001,Swedish Match - Back Square - Add Service,5030 Back Square Dr,Owensboro,KY,42301-7413,Manufacturing,Britney Chilton,Sammie Kidd,Evansville Region
+2130-001,Lewis Lane Baptist Church - Add Service,2600 Lewis Ln,Owensboro,KY,42301-5321,Church,Inactive,Inactive,Owensboro Branch
+2257-001,Deaconess Health System,600 Mary St,Evansville,IN,47710-1658,Medical Outpatient,Britney Chilton,Britney Chilton,Evansville Region
+2268-001,Graywolf Integrated Construction - Add Services,2205 Ragu Dr,Owensboro,KY,42303-1437,Manufacturing,Steven Kidd,Steven Kidd,Bowling Green Region
+3116-001,AFNI - Add Service,2625 Scottsville Rd,Bowling Green,KY,42104-4477,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3119-001,WestRock - Add Service,225 Mitch McConnell Way,Bowling Green,KY,42101-7516,Manufacturing,Steven Kidd,Kathy Hogue,Bowling Green Region
+3121-001,Bowling Green Metalforming - Add Service,111 Cosma Dr,Bowling Green,KY,42101-8047,Manufacturing,Steven Kidd,Valerie Rankin,Bowling Green Region
+3122-1001,Franklin Primary Care - Add Service,1020 S Main St,Franklin,KY,42134-2370,Medical Outpatient,Steven Kidd,Debra Murphy,Bowling Green Region
+3122-2001,Franklin Medical Pavilion - Add Service,1100 Brookhaven Rd,Franklin,KY,42134-2746,Medical Outpatient,Steven Kidd,Debra Murphy,Bowling Green Region
+3127-10001,US Bank - Russellville (#4587) - Add Service,135 W 4th St,Russellville,KY,42276-1301,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-1001,US Bank - East Main (#4432) - Add Service,50 E Main Ave,Bowling Green,KY,42101-2176,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-11001,US Bank - Western Ky University,1906 College Heights Blvd,Bowling Green,KY,42101-1000,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-4001,US Bank - Campbell Lane (#4430) - Add Service,721 Campbell Ln,Bowling Green,KY,42104-1040,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-5001,US Bank - Cave Mill Road (#4431) - Add Service,1970 Cave Mill Rd,Bowling Green,KY,42104-6337,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-6001,US Bank - Lain Ave (#4434) - Add Service,810 Lain Ave,Bowling Green,KY,42101-4908,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-7001,US Bank - Louisville Road (#4436) - Add Service,3240 Louisville Rd,Bowling Green,KY,42101-7103,Commercial /  Corporate Campus,Steven Kidd,Kathy Hogue,Bowling Green Region
+3127-9001,US Bank - South Main (#4462) - Add Service,910 S Main St,Franklin,KY,42134-2365,Commercial /  Corporate Campus,Steven Kidd,Debra Murphy,Bowling Green Region
+3128-10001,Graves Gilbert - Brownsville - Add Service,100 Park Pl Ste 6,Brownsville,KY,42210-9036,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-1001,Graves Gilbert - Main Office - Add Service,201 Park St,Bowling Green,KY,42101-1759,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-11001,Graves Gilbert - Walk-in Clinic - Add Service,1225 Fairway St,Bowling Green,KY,42103-2477,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-12001,Graves Gilbert - Scottsville Road - Add Service,5575 Scottsville Rd,Bowling Green,KY,42104-6800,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-13,Graves Gilbert - Nashville Road,5796 Nashville Rd,Bowling Green,KY,42101-7546,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-13001,Graves Gilbert - Nashville Road - Add Service,5796 Nashville Rd,Bowling Green,KY,42101-7546,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-14,Graves Gilbert - Louisville Road,6807 Louisville Rd,Bowling Green,KY,42101-8015,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-14001,Graves Gilbert - Louisville Road - Add Service,6807 Louisville Rd,Bowling Green,KY,42101-8015,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-15001,Graves Gilbert - Munfordville - Floor Work,950 Main St,Munfordville,KY,42765-9435,Medical Outpatient,Steven Kidd,Brian Lewis,Bowling Green Region
+3128-16,Graves Gilbert - Dermatology,1065 Ashley St,Bowling Green,KY,42103-3400,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-16001,Graves Gilbert - Dermatology - Add Service,1065 Ashley St,Bowling Green,KY,42103-3400,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-17,Graves Gilbert - Prime Care,990 Wilkinson Trce,Bowling Green,KY,42103-3404,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-17001,Graves Gilbert - Prime Care - Add Service,990 Wilkinson Trce,Bowling Green,KY,42103-3404,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3128-2001,Graves Gilbert - Family Care - Add Service,2724 Nashville Rd,Bowling Green,KY,42101-4000,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-3001,Graves Gilbert - The Depot - Add Service,410 Kentucky Ave,Bowling Green,KY,42101,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-5001,Graves Gilbert - Family Care - Add Service,2724 Nashville Rd,Bowling Green,KY,42101-4000,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-6001,Graves Gilbert - Franklin - Add Service,1030 Brookhaven Rd,Franklin,KY,42134-2745,Medical Outpatient,Steven Kidd,Debra Murphy,Bowling Green Region
+3128-7001,Graves Gilbert - Franklin - Weekend - Add Service,1030 Brookhaven Rd,Franklin,KY,42134-2745,Medical Outpatient,Steven Kidd,Debra Murphy,Bowling Green Region
+3128-8001,Graves Gilbert - Dr. Granese - Add Service,720 2nd Ave,Bowling Green,KY,42101-1778,Medical Outpatient,Steven Kidd,Eric Johnson,Bowling Green Region
+3128-9001,Graves Gilbert - Surgery Center - Add Service,165 Natchez Trace Ave,Bowling Green,KY,42103-7940,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3131-001,Living Hope Baptist Church - Add Service,1805 Westen St,Bowling Green,KY,42104-4151,Church,Steven Kidd,Debra Murphy,Bowling Green Region
+3132-001,Fritz Winter - Add Service,1 Fritz Winter Dr,Franklin,KY,42134,Manufacturing,Steven Kidd,Debra Murphy,Bowling Green Region
+3133-001,Fruit of the Loom - Add Service,1 Fruit Of The Loom Dr,Bowling Green,KY,42103-7932,Manufacturing,Steven Kidd,Kesha Hall,Bowling Green Region
+3136-001,448 Golden Autumn Way - Add Service,165 Natchez Trace Ave,Bowling Green,KY,42103-7940,Commercial /  Corporate Campus,Steven Kidd,Eric Johnson,Bowling Green Region
+3139-001,Toyo Automotive - Add Service,521 Page Dr,Franklin,KY,42134-6243,Manufacturing,Steven Kidd,Debra Murphy,Bowling Green Region
+3140-001,Greenview Surgery Center - Add Service,484 Golden Autumn Way,Bowling Green,KY,42103,Medical Outpatient,Steven Kidd,Kathy Hogue,Bowling Green Region
+3142-001,Smuckers -  Add Service,1070 Smith Grove Rd,Scottsville,KY,42164-9444,Manufacturing,Steven Kidd,Tammy Wolfe,Bowling Green Region
+3142-002,Smuckers - Consumables,1070 Smith Grove Rd,Scottsville,KY,42164-9444,Manufacturing,Steven Kidd,Tammy Wolfe,Bowling Green Region
+3144-001,National Corvette Museum - Add Service,350 Corvette Dr,Bowling Green,KY,42101-9134,Public Venue,Steven Kidd,Kesha Hall,Bowling Green Region
+3145-001,"Berry Global, Inc. - Add Service",2320 Bowling Green Rd,Franklin,KY,42134-9611,Manufacturing,Steven Kidd,Steven Kidd,Bowling Green Region
+4105-1001,Accuride - Plant - Add Service,2315 Adams Ln,Henderson,KY,42420-4593,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4105-2001,Accuride - Lab - Add Service,2315 Adams Ln,Henderson,KY,42420-4593,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4105-4001,Accuride - COVID19 Disinfecting - Add Service,2315 Adams Ln,Henderson,KY,42420-4593,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4110-001,Madisonville State Office Building - Add Service,625 Hospital Dr,Madisonville,KY,42431-1682,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4122-001,Accuride - Corporate - Add Service,7140 Office Cir,Evansville,IN,47715-8235,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4123-10001,Deconess- EMS South - Add Service,383 Borax Dr,Henderson,KY,42420-5050,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-11001,Deaconess - Klutey Park - Add Service,471 Klutey Park Plaza Dr,Henderson,KY,42420-3347,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-14,Deaconess - Surgical Services,1413 N Elm St,Henderson,KY,42420-2768,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-14001,Deaconess - Surgical Services - Add Service,1305 N Elm St,Henderson,KY,42420-2783,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-19001,Deaconess - Adkinson Lab - Add Service,1305 N Elm St,Henderson,KY,42420-2783,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-20001,Deaconess - Family Practice - Add Service,1284 US Highway 60 W,Morganfield,KY,42437-6236,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-22,Deaconess - Klutey Park Blood Lab,471 Klutey Park Plaza Dr,Henderson,KY,42420-3347,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-22001,Deaconess - Klutey Park Blood Lab - Add Service,471 Klutey Park Plaza Dr,Henderson,KY,42420-3347,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-23,Deaconess - Multi Specialty Clinic - Suite 106,1413 N Elm St Ste 106,Henderson,KY,42420-2776,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-23001,Deaconess - Multi Specialty Cl- Ste 106 - Add Svc,1413 N Elm St Ste 106,Henderson,KY,42420-2776,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-3001,Deaconess- Wilder - Add Service,1305 N Elm St,Henderson,KY,42420-2783,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-9001,Deaconess- Letcher Street - Add Service,411 Letcher St,Henderson,KY,42420-4245,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4123-Error,Deaconess - Klutey Park - Add Service,471 Klutey Park Plaza Dr,Henderson,KY,42420-3347,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4130-001,Kimball - 15th Street - Add Service,1037 E 15th St,Jasper,IN,47546-2226,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4133-001,St Vincent Urological - Add Service,920 S Hebron Ave,Evansville,IN,47714-4086,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4137-2001,Century Aluminum - Add Service,9404 State Route 2096,Robards,KY,42452-9735,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4143-2001,Kimball Hospitality - Add Service,1180 E 16th St,Jasper,IN,47549-1009,Manufacturing,Britney Chilton,Inactive,Evansville Region
+4144-1001,NOF - Santa Claus - Add Service,1255 W Christmas Blvd,Santa Claus,IN,47579-8533,Manufacturing,Steven Kidd,Kyle Bartlett,Bowling Green Region
+4146-10001,ONB -  Bell Oaks (#014) - Add Service,8577 Ruffian Ln,Newburgh,IN,47630-3400,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-11001,ONB - Boonville (#017) - Add Service,224 W Main St,Boonville,IN,47601-3008,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-12001,ONB - Mt. Vernon Main (#022) - Add Service,402 Main St,Mount Vernon,IN,47620-1844,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-13,ONB - Burkhardt Road (#145),835 N Burkhardt Rd,Evansville,IN,47715-2741,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-13001,ONB - Burkhardt Road (#145) - Add Service,835 N Burkhardt Rd,Evansville,IN,47715-2741,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-14,ONB - Lakeside Commons (#193),3535 N Green River Rd,Evansville,IN,47715-1347,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-14001,ONB - Lakeside Commons (#193) - Add Service,3535 N Green River Rd,Evansville,IN,47715-1347,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-15,ONB - Henderson Main (#032A/032B),301 2nd St,Henderson,KY,42420-3139,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-15001,ONB - Henderson Main (#032A/032B) - Add Service,301 2nd St,Henderson,KY,42420-3139,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-17,ONB - Morganfield Main (#061),130 N Morgan St,Morganfield,KY,42437-1477,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-17001,ONB - Morganfield Main (#061) - Add Service,130 N Morgan St,Morganfield,KY,42437-1477,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-18,ONB - Greenville Main (#073A/073B) - Drive Through,131 E Main Cross St,Greenville,KY,42345-1577,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-2001,ONB - Washington & KY (#003) - Add Service,961 Washington Ave,Evansville,IN,47713-2238,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-21,ONB - Central City (#076),301 S. 2nd Street,Central City,KY,42330-1603,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-21001,ONB - Central City (#076) - Add Service,301 S. 2nd Street,Central City,KY,42330-1603,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-22,ONB - Madisonville Main (#077),501 Hospital Dr,Madisonville,KY,42431-1647,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-22001,ONB - Madisonville Main (#077) - Add Service,501 Hospital Dr,Madisonville,KY,42431-1647,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-24,ONB - Jasper Main (#098),1 Dcb Plz,Jasper,IN,47546-2972,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-24001,ONB - Jasper Main (#098) - Add Service,1 Dcb Plz,Jasper,IN,47546-2972,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-25,ONB - Jasper Ferdinand (#099),1155 Main St,Ferdinand,IN,47532-9401,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-25001,ONB - Jasper Ferdinand (#099) - Add Service,1155 Main St,Ferdinand,IN,47532-9401,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-27,ONB - Jasper Manor (#105),681 3rd Ave,Jasper,IN,47546-3602,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-27001,ONB - Jasper Manor (#105) - Add Service,681 3rd Ave,Jasper,IN,47546-3602,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-28,ONB - Jasper Germantown (#106),3603 N Newton St,Jasper,IN,47546-8014,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-28001,ONB - Jasper Germantown (#106) - Add Service,3603 N Newton St,Jasper,IN,47546-8014,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-29,ONB - Jasper Crossing (#107),771 W 2nd St,Jasper,IN,47546-2649,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-29001,ONB - Jasper Crossing (#107) - Add Service,771 W 2nd St,Jasper,IN,47546-2649,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-30,ONB - Princeton (#020),1703 W Broadway St,Princeton,IN,47670-1092,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-30001,ONB - Princeton (#020) - Add Service,1703 W Broadway St,Princeton,IN,47670-1092,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-3001,ONB - West Side (#004A/004B) - Add Service,2121 W Franklin St,Evansville,IN,47712-5167,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-33,ONB - Vincennes Main (#067-1),100 S. 6th St.,Vincennes,IN,47591-1219,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-33001,ONB - Vincennes Main (#067) - Add Service,20 N 3rd St,Vincennes,IN,47591-1219,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-36,ONB - Vincennes Hart Street (#072),1905 Hart St,Vincennes,IN,47591-5519,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-36001,ONB - Vincennes Hart Street (#072) - Add Service,1905 Hart St,Vincennes,IN,47591-5519,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-38,ONB - Washington East Side (#086),311 SE 21st St,Washington,IN,47501-1758,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-40,ONB - Washington Loogootee (#089),602 W Broadway St,Loogootee,IN,47553-2440,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-5001,ONB - Hebron (#007) - Add Service,4500 Washington Ave,Evansville,IN,47714-0893,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-52,ONB - Rockport (#029),886 Sycamore St,Rockport,IN,47635-1108,Commercial /  Corporate Campus,Steven Kidd,Donna McCarty,Evansville Region
+4146-52001,ONB - Rockport (#029) - Add Service,886 Sycamore St,Rockport,IN,47635-1108,Commercial /  Corporate Campus,Steven Kidd,Donna McCarty,Evansville Region
+4146-53,ONB - Huntingburg (#341),327 E 4th St,Huntingburg,IN,47542-1337,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-53001,ONB - Huntingburg (#341) - Add Service,327 E 4th St,Huntingburg,IN,47542-1337,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-55001,ONB - One Main St. - Add Service,1 Main St,Evansville,IN,47708-1464,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-56,ONB - Powderly - (073-1),1000 Medical Center Dr,Powderly,KY,42367,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-56001,ONB - Greenville Main  - (#073-1) - Add Service,1000 Medical Center Dr,Powderly,KY,42367,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-57001,ONB - Greenville Airport - (#075) - Add Service,399 Airport Rd,Greenville,KY,42345-1781,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-6001,ONB - University Square (#008)  - Add Service,1925 Lincoln Ave,Evansville,IN,47714-1507,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-7001,ONB - North Brook (#009) - Add Service,901 Keck Ave,Evansville,IN,47711-3841,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-8001,ONB - Darmstadt (#010) - Add Service,544 E. Boonville New Harmony Rd,Evansville,IN,47725-9592,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4146-9001,ONB - Red Bank (#013) - Add Service,5124 Pearl Dr,Evansville,IN,47712-8109,Commercial /  Corporate Campus,Britney Chilton,Donna McCarty,Evansville Region
+4147-001,Continental Mills - Additional Service,100 Krusteaz Way,Hopkinsville,KY,42240-6809,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4153-001,Columbia Sportswear - Additional Service,2001 Northern Star Way,Robards,KY,42452-9370,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4155-001,Sonoco - Add Service,3100 Ohio Dr,Henderson,KY,42420-5045,Manufacturing,Britney Chilton,Charles Bailey,Evansville Region
+4156-001,Sabic - Add Service,1 Lexan Ln,Mount Vernon,IN,47620-9367,Manufacturing,Britney Chilton,Brandy Williams,Evansville Region
+4157-1001,MSHA  Building - Add Service,100 YMCA Dr,Madisonville,KY,42431-9000,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4160-10001,Deaconess - Gateway #3 Fam Med Ste 300 - Add Svc,4015 Gateway Blvd Ste 300,Newburgh,IN,47630-8925,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-1001,Deaconess - Mt. Pleasant - Add Service,8600 N Kentucky Ave,Evansville,IN,47725-6302,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-11001,Deaconess - Gateway #3 GI Suite 3000 - Add Svc,"4105 Gate Way Blvd, Suite 3000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-12001,Deaconess - Gateway #3 Audiol. Ste 4000 - Add Svc,"4105 Gate Blvd, Suite 4000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-13,Deaconess - Gateway #3 Primary Care Suite 4000,"4105 Gateway Blvd, Suite 4000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-13001,Deaconess - Gateway #3 Prim  Care Ste 4000 - Add,"4105 Gateway Blvd, Suite 4000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-14,Deaconess - Gateway #3 ENT Suite 4000,"4105 Gateway Blvd, Suite 4000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-14001,Deaconess - Gateway #3 ENT Suite 4000 - Add Svc,"4105 Gateway Blvd, Suite 4000",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-15,Deaconess - Gateway Commons Area #3,4105 Gate Way Bld,Newbrugh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-15001,Deaconess - Gateway Commons Area #3 - Add Svc,4105 Gate Way Bld,Newbrugh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-16,Deaconess - Franklin St,2007B W Franklin St,Evansville,IN,47712-5112,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-16001,Deaconess - Franklin St - Add Services,2007B W Franklin St,Evansville,IN,47712-5112,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-17,Deaconess - Pain Management - Suite 2120,"4105 Gateway Blvd, Suite 2120",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-17001,Deaconess - Pain Management - Ste 2120 - Add Svc,"4105 Gateway Blvd, Suite 2120",Newburgh,IN,47630,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-3001,Deaconess - Lynch Road - Add Service,"4949 Healthy Way, Suite A",Evansville,IN,47715,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-4001,Deaconess - Boehne Camp - Add Service,545 S Boehne Camp Rd,Evansville,IN,47712-3703,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-5001,Deaconess - Urgent Care Hwy 41 - Add Service,2242 US Highway 41 N,Henderson,KY,42420-2375,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4160-6001,Deaconess - Gateway #3 Heart Admin - Add Service,4015 Gateway Blvd Ste 2110,Newburgh,IN,47630-9460,Medical Outpatient,Britney Chilton,Inactive,Evansville Region
+4160-7001,Deaconess - Gatewary #3 Cardiac Rehab - Add Svc,4015 Gateway Blvd Ste 2122,Newburgh,IN,47630-9460,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-8001,Deaconess - Gateway #3 Heart Group Ste 100 - Add,4015 Gateway Blvd Ste 100,Newburgh,IN,47630-8925,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4160-9001,Deaconess - Gateway #3 Heart Group Ste 2120 - Add,4015 Gateway Blvd,Newburgh,IN,47630-8925,Medical Outpatient,Britney Chilton,Inactive,Evansville Region
+4160-999,Deaconess - Gateway Clean TEAM,4015 Gateway Blvd Ste 2110,Newburgh,IN,47630-9460,Medical Outpatient,Britney Chilton,Brandy Williams,Evansville Region
+4161-001,Crick & Fife Pediatrics - Add Service,2000 N Elm St,Henderson,KY,42420-2385,Medical Outpatient,Britney Chilton,Charles Bailey,Evansville Region
+4165-1001,Masterbrand - Corporate -  Add Service,1 Masterbrand Cabinets Dr,Jasper,IN,47546-2248,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-2001,Masterbrand - Traing Center - Add Serv,1 Masterbrand Cabinets Dr,Jasper,IN,47546-2248,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-3001,Masterbrand - Decora Plant 3 - Add Service,1491 S Meridian Rd,Jasper,IN,47546-3831,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-4001,Masterbrand - Hangar Bay - Add Service,2716 W 900S,Huntingburg,IN,47542-9628,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4165-5001,Masterbrand - Ferdinand - Add Service,624 W 3rd St,Ferdinand,IN,47532-9754,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4168-001,Metalsa - Hopkinsville - Add Service,301 Bill Bryan Blvd,Hopkinsville,KY,42240-6811,Manufacturing,Brian Lewis,Rodney Phillips,Clarksville Region
+4176-001,Tungco - Add Service,3955 Anton Rd,Madisonville,KY,42431-8533,Commercial /  Corporate Campus,Britney Chilton,Charles Bailey,Evansville Region
+4179-1001,United Companies - 3420 - Add Service,3420 E Morgan Ave,Evansville,IN,47715-2264,Commercial /  Corporate Campus,Britney Chilton,Brandy Williams,Evansville Region
+4179-2001,United Leasing - 3700 - Add Service,3700 E Morgan Ave,Evansville,IN,47715-2240,Commercial /  Corporate Campus,Britney Chilton,Brandy Williams,Evansville Region
+4180-001,Kimball Electronics Corp.  HQ - Kech - Add Service,1205 Kimball Blvd,Jasper,IN,47546-0017,Commercial /  Corporate Campus,Britney Chilton,Sarah Bradley,Evansville Region
+4195-999,Clean Team #1 - ONB,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Britney Chilton,Britney Chilton,Evansville Region
+4212-1001,Masterbrand - Huntingburg - Plant 01 - Add Service,1008 N Geiger St,Huntingburg,IN,47542-8914,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4212-5001,Masterbrand - Huntingburg - Plant 5 - Add Service,1008 N Geiger St,Huntingburg,IN,47542-8914,Manufacturing,Britney Chilton,Sarah Bradley,Evansville Region
+4213-1001,US Smokeless Tobacco - Main Plant - Add Service,1600 N Main St,Hopkinsville,KY,42240-2724,Manufacturing,Brian Lewis,Rodney Phillips,Evansville Region
+4213-2001,US Smokeless Tobacco - Eagle One - Add Service,100 Weymans Way,Hopkinsville,KY,42240,Manufacturing,Brian Lewis,Rodney Phillips,Evansville Region
+4213-3001,US Smokeless Tobacco - Clarksville - Add Service,102 Hornberger LN,Clarksville,TN,37040-3343,Manufacturing,Brian Lewis,Rodney Phillips,Evansville Region
+4213-4001,US Smokeless Tobacco - Springfield - Add Service,301 10th Ave W,Springfield,TN,37172-3101,Manufacturing,Brian Lewis,Rodney Phillips,Evansville Region
+4215-001,Sabic -- Brine Cell Membrane - Add Service,1 Lexan Ln,Mount Vernon,IN,47620-9367,Manufacturing,Britney Chilton,Brandy Williams,Evansville Region
+4217-001,NOF - Headquarters - Jasper - Add Service,1610 Royal Street,Jasper,IN,47546,Commercial /  Corporate Campus,Britney Chilton,Sarah Bradley,Evansville Region
+4218-001,Kimball Health Center - Jasper - Add Service,1620 Cherry St. Suite A,Jasper,IN,47546,Medical Outpatient,Britney Chilton,Sarah Bradley,Evansville Region
+4223-1001,Escalade Sports - Add Service,817 Maxwell Ave,Evansville,IN,47711-3847,Warehourse / Distribution Center,Britney Chilton,Brandy Williams,Evansville Region
+4223-2001,Escalade Sports - Stringtown Road - Add Service,817 Maxwell Ave,Evansville,IN,47711-3847,Warehourse / Distribution Center,Britney Chilton,Brandy Williams,Evansville Region
+4226-001,Red Spot Paint - Add Service,1107 E Louisiana St,Evansville,IN,47711-4747,Manufacturing,Britney Chilton,Brandy Williams,Evansville Region
+501-1,Frantz Building Services - Kotter Avenue,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Tong Enterprises LLC
+501-2,Frantz Building Services - 319 East 2nd Street,319 E 2nd St,Owensboro,KY,42303-4203,Inactive,Inactive,Inactive,Tong Enterprises LLC
+501-3,Frantz Building Services - 6235 Hwy 54 East,6235 State Route 54,Philpot,KY,42366-9642,Inactive,Inactive,Inactive,Tong Enterprises LLC
+501-4,Frantz Building Services - 309 E. 2nd Parking Lot,309 East 2nd Street,Owensboro,KY,42303,Inactive,Inactive,Inactive,Tong Enterprises LLC
+5102-1001,Alive Hospice - Residence - Add Service,1710 Patterson St,Nashville,TN,37203-2926,Medical Outpatient,Brian Lewis,Kim Jones,Clarksville Region
+5102-6001,Alive Hospice - Murfreesboro - Add Service,1629 Williams Dr,Murfreesboro,TN,37129-3183,Medical Outpatient,Brian Lewis,Kim Jones,Clarksville Region
+5109-001,3M - Add Service,400 Swinging Bridge Rd,Old Hickory,TN,37138-3512,Commercial /  Corporate Campus,Brian Lewis,Brian Lewis,Clarksville Region
+5132-1001,CMHOF - Additional Service,222 Rep John Lewis Way S,Nashville,TN,37203-4206,Public Venue,Brian Lewis,Kimberly McConnell,Clarksville Region
+602-1,Rodrigo Felipe Rios and Damarif Mendez,4212 Jefferson St,Owensboro,KY,42303-7358,Inactive,Inactive,Jordan Tong,Tong Enterprises LLC
+6101-001,Monument Chemical - Add Service,2450 Olin Rd,Brandenburg,KY,40108-9508,Manufacturing,Angie Compton,Angie Compton,Elizabethtown Region
+6102-001,Altec - Add Service,200 Altec Dr,Elizabethtown,KY,42701-4501,Manufacturing,Angie Compton,Angie Compton,Elizabethtown Region
+6103-1001,Tower International - Bardstown - Add Service,850 Withrow Ct,Bardstown,KY,40004-2649,Manufacturing,Angie Compton,Angie Compton,Owensboro Branch
+6103-1002,Tower International - Bardstown - Weekend,850 Withrow Ct,Bardstown,KY,40004-2649,Manufacturing,Angie Compton,Angie Compton,Elizabethtown Region
+6103-2001,Tower International - Shepherdsville - Add Service,550 Cedar Grove Rd,Shepherdsville,KY,40165-6459,Manufacturing,Angie Compton,Angie Compton,Elizabethtown Region
+6104-001,Altec - 0443 Bldg 205 Svc Center - Add Service,205 Altec Dr,Elizabethtown,KY,42701,Commercial /  Corporate Campus,Angie Compton,Adoria Pruitt,Elizabethtown Region
+6105-001,AGC - Elizabethtown - Add Service,1 Auto Glass Dr,Elizabethtown,KY,42701-4500,Manufacturing,Angie Compton,Julian Gulley,Elizabethtown Region
+6108-001,AGC - Bellefontaine - Add Service,1465 W Sandusky Ave,Bellefontaine,OH,43311-1082,Manufacturing,Angie Compton,Angie Compton,Elizabethtown Region
+7201-001,Toyota Industrial Equipment - Add Service,5559 Inwood Dr,Columbus,IN,47201-9755,Commercial /  Corporate Campus,Desmond Carpenter,Aaron Pitzer,Bloomington Region
+7201-002,Toyota Industrial Equipment - Floor Polishing,5559 Inwood Dr,Columbus,IN,47201-9755,Commercial /  Corporate Campus,Inactive Job,Aaron Pitzer,Bloomington Region
+7203-1001,Boston Scientific - Add Service,780 Brookside Dr,Spencer,IN,47460-1080,Medical Outpatient,Desmond Carpenter,David Voorhees,Bloomington Region
+7203-2001,Boston Scientific - Bloomington - Add Service,1180 S Liberty Dr,Bloomington,IN,47403-5178,Manufacturing,Desmond Carpenter,David Voorhees,Bloomington Region
+7204-001,Cook Medical - Spencer - Add Service,1100 W Morgan St,Spencer,IN,47460-9426,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7205-1001,IU Health - Landmark - Add Service,550 S Landmark Ave,Bloomington,IN,47403-3239,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7205-2001,IU Health - Ortho & Sports Med 064 - Add Service,2605 E Creeks Edge Dr,Bloomington,IN,47401-8368,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7205-4001,SIP Riley Physicians Behavioral Health - Add Svc,350 S Landmark Ave,Bloomington,IN,47403-5001,Medical Outpatient,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7205-5001,IU Health - Bloomington Hospital - Add Svc,2651 E Discovery Pkwy,Bloomington,IN,47408-9059,Medical Outpatient,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7206-1001,Hoosier Energy - Headquarters - Add Service,7398 State Rd 37,Bloomington,IN,47404,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-2001,Hoosier Energy - Owen County - Add Service,204 IN 43,Spencer,IN,47460,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-3001,Hoosier Energy - Worthington - Add Service,3259 N US Highway 231,Switz City,IN,47465-7135,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-4001,Hoosier Energy - Franklin Training - Add Service,1000 S Old Palestine Rd,Mitchell,IN,47446-6862,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7206-5001,Hoosier Energy - Bedford - Add Service,3488 W. 100 S,Franklin,IN,46131,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7207-001,Dorel Juvenile Group - Add Service,500 S. Gladstone Ave,Columbus,IN,47201,Manufacturing,Desmond Carpenter,Aaron Pitzer,Bloomington Region
+7208-1001,Northview - Carmel - Add Service,12900 Hazel Dell Pkwy,Carmel,IN,46033-4665,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-1002,Northview - Carmel - Kapstone,12900 Hazel Dell Pkwy,Carmel,IN,46033-4665,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-1003,Northview - Carmel - Pathways Consumables,12900 Hazel Dell Pkwy,Carmel,IN,46033-4665,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-2001,Northview - Fishers - Add Service,14842 E 136th St,Fishers,IN,46037-3481,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-3001,Northview - Westfield - Add Service,1191 W 186th St,Westfield,IN,46074-9213,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-4001,Northview - Kokomo - Add Service,3409 S 200 W,Kokomo,IN,46902-9613,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-5001,Northview - Binford - Add Service,6620 Northview Way,Indianapolis,IN,46220-4993,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-5002,Northview - Binford - Pathway,6620 Northview Way,Indianapolis,IN,46220-4993,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-5003,Northview - Binford - Kapstone,6620 Northview Way,Indianapolis,IN,46220-4993,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-5004,Northview - Binford - Central,6620 Northview Way,Indianapolis,IN,46220-4993,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-6001,Northview - Anderson - Add Service,1720 E 22nd St,Anderson,IN,46016-5700,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-7001,Northview - West Lafayette - Add Service,2703 Lindberg Rd,West Lafayette,IN,47906-5016,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7208-8001,Northview - Flora - Add Service,687 E 50 N,Flora,IN,46929-9681,Church,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7211-001,SIRA Imaging Center - Add Service,500 S Landmark Ave,Bloomington,IN,47403-3239,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-10001,IU Credit Union - W. State Rd 46 - Add Service,3801 W State Road 46,Bloomington,IN,47404-9644,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-1001,IU Credit Union - Winslow Rd - Add Service,105 E Winslow Rd,Bloomington,IN,47401-8689,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-11001,IU Credit Union - Operations Center - Add Service,4201 E Hagan St,Bloomington,IN,47401,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-2001,IU Credit Union - Woodcrest Dr - Add Service,410 S Woodscrest Dr,Bloomington,IN,47401-5373,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-3001,IU Credit Union - ATMs - Add Service,300 N Walnut St,Bloomington,IN,47404-3802,Commercial /  Corporate Campus,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7214-4001,IU Credit Union - State Road 135 - Add Service,996 State Rd 135,Greenwood,IN,46142,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-5001,IU Credit Union -  Southpointe Dr - Add Service,8936 Southpointe Dr Ste C6,Indianapolis,IN,46227-7506,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-6001,IU Credit Union - N US Hwy 31 - Add Service,800 N US Highway 31 N,Greenwood,IN,46142-4401,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-7001,IU Credit Union - Busines Center - Add Service,365 E Winslow Rd,Bloomington,IN,47401-7327,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-8001,IU Credit Union - E. 17th St - Add Service,510 E 17th St,Bloomington,IN,47408-1500,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7214-9001,IU Credit Union - Gates Dr - Add Service,301 N Gates Dr,Bloomington,IN,47404-4842,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7215-001,Singota Solutions - Add Service,4320 W Zenith Dr,Bloomington,IN,47404-7401,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7217-001,Faith Lutheran Church - Add Service,2200 S High St,Bloomington,IN,47401-4313,Church,Desmond Carpenter,Vicki Southern,Bloomington Region
+7218-001,The Fields - Add Service,1333 S Fenbrook Ln,Bloomington,IN,47401-4263,Education - University,Desmond Carpenter,Vicki Southern,Bloomington Region
+7221-001,Cook Aviation - Add Service,970 S Kirby Rd,Bloomington,IN,47403-9392,Commercial /  Corporate Campus,Desmond Carpenter,Vicki Southern,Bloomington Region
+7222-001,Bloomington Government Offices - Add Service,1547 S. Curry Pike,Bloomington,IN,47403,Government,Desmond Carpenter,Vicki Southern,Bloomington Region
+7224-001,Kite Realty - Add Service,7426 Fishers Station Dr,Fishers,IN,46038-2323,Commercial /  Corporate Campus,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7225-001,KBSO Consulting - Add Service,1344 S Rangeline Rd Ste 202,Carmel,IN,46032-2932,Commercial /  Corporate Campus,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7226-001,Upland Brewing Company - Add Service,4060 W Profile Pkwy,Bloomington,IN,47404-2554,Manufacturing,Desmond Carpenter,Vicki Southern,Bloomington Region
+7226-1001,Upland Brewing Company - Downtown Add Service,350 W 11th St,Bloomington,IN,47404-3720,Manufacturing,Desmond Carpenter,Vicki Southern,Bloomington Region
+7227-001,Spectrum Brands - Add Service,20975 Creek Rd,Noblesville,IN,46060-9383,Manufacturing,Desmond Carpenter,Brandon Burrell,Bloomington Region
+7230-001,Bedford Ford / Bedford Chrysler - Add Service,10050 State Road 37,Bedford,IN,47421-6421,Commercial /  Corporate Campus,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7232-001,Indiana Hydraulic Equipment Corp. - Add Service,2000 Commerce Pkwy,Franklin,IN,46131-6966,Manufacturing,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7233-001,Bloomington Surgery Center - Add Service,1011 W 2nd St,Bloomington,IN,47403-2216,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7235-001,Cardinal Spirits - Add Service,1425 S Curry Pike,Bloomington,IN,47403-2708,Commercial /  Corporate Campus,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7236-001,Bloomington Project School - Add Service,349 S Walnut St,Bloomington,IN,47401-3511,Education - K-12,Desmond Carpenter,Vicki Southern,Bloomington Region
+7237-001,AAM Metalforming - Add Services,2805 Norcross Dr,Columbus,IN,47201-4911,Manufacturing,Desmond Carpenter,Aaron Pitzer,Bloomington Region
+7238-001,Surgicare - Add Service,2907 S McIntire Dr Ste C,Bloomington,IN,47403-4224,Medical Outpatient,Desmond Carpenter,Vicki Southern,Bloomington Region
+7413-001,Clay Community Schools - Add Service,1013 S Forest Ave,Brazil,IN,47834-3182,Education - K-12,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7414-001,OneSource - Store 1120 Tire Barn,3450 W 3rd St,Bloomington,IN,47404-4850,Warehourse / Distribution Center,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+7415-001,Bloomington Church of Christ - Add Service,4440 W Gifford Rd,Bloomington,IN,47403-9262,Church,Desmond Carpenter,Desmond Carpenter,Bloomington Region
+8113-19,FrontStreet - Radcliff,2300 S Dixie Blvd,Radcliff,KY,40160-1039,Inactive,Inactive,Inactive,Electrical Services
