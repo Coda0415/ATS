@@ -26,13 +26,13 @@ def webhook():
         if isinstance(payload, dict):
             contact_id = payload.get('objectId')
             if contact_id:
-                contact = get_contact_info(contact_id)
+                contact = get_contact_info(private_app_access_token, contact_id)
                 contacts.append(contact)
 
     return render_template('webhook_log.html', contacts=contacts)
 
 
-def get_contact_info(contact_id):
+def get_contact_info(private_app_access_token, contact_id):
     headers = {
         'Authorization': f'Bearer {private_app_access_token}'
     }
@@ -46,3 +46,6 @@ def get_contact_info(contact_id):
     else:
         print(f"Failed to retrieve contact information. Status code: {response.status_code}")
         return None
+
+# Example usage
+private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
