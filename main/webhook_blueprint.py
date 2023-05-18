@@ -5,6 +5,7 @@ webhook_blueprint = Blueprint('webhook', __name__)
 webhook_log = []  # A list to store the webhook payloads
 portal_id = '9145139'
 private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
+
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST'])
 def handle_hubspot_webhook():
     payload = request.json
@@ -26,8 +27,9 @@ def webhook():
         if isinstance(payload, dict):
             contact_id = payload.get('objectId')
             if contact_id:
-                contact = get_contact_info(private_app_access_token, contact_id)
-                contacts.append(contact)
+                contact_data = get_contact_info(private_app_access_token, contact_id)
+                if contact_data:
+                    contacts.append(contact_data)
 
     return render_template('webhook_log.html', contacts=contacts)
 
