@@ -27,9 +27,13 @@ def webhook():
         if isinstance(payload, dict):
             contact_id = payload.get('objectId')
             if contact_id:
+                print(f"Retrieving contact information for contact ID: {contact_id}")
                 contact_data = get_contact_info(private_app_access_token, contact_id)
                 if contact_data:
+                    print(f"Contact information retrieved for contact ID: {contact_id}")
                     contacts.append(contact_data)
+                else:
+                    print(f"Failed to retrieve contact information for contact ID: {contact_id}")
 
     return render_template('webhook_log.html', contacts=contacts)
 
