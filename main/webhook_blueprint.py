@@ -14,11 +14,13 @@ def handle_hubspot_webhook():
     # Add the webhook payload to the log
     webhook_log.append(payload)
 
+    # Print the current webhook log
+    print('Current webhook log:', webhook_log)
+
     return '', 200
 
 @webhook_blueprint.route('/webhook/log', methods=['GET'])
 def get_webhook_log():
-    print('Webhook Log:', webhook_log)
     return jsonify(webhook_log)
 
 @webhook_blueprint.route('/webhook')
