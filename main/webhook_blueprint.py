@@ -23,10 +23,11 @@ def get_webhook_log():
 def webhook():
     contacts = []
     for payload in webhook_log:
-        contact_id = str(payload['objectId'])  # Convert contact_id to string
-        if contact_id:
-            contact = get_contact_info(contact_id)
-            contacts.append(contact)
+        if isinstance(payload, dict):
+            contact_id = payload.get('objectId')
+            if contact_id:
+                contact = get_contact_info(contact_id)
+                contacts.append(contact)
 
     return render_template('webhook_log.html', contacts=contacts)
 
