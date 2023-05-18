@@ -18,6 +18,7 @@ def handle_hubspot_webhook():
 
 @webhook_blueprint.route('/webhook/log', methods=['GET'])
 def get_webhook_log():
+    print('Webhook Log:', webhook_log)
     return jsonify(webhook_log)
 
 @webhook_blueprint.route('/webhook')
