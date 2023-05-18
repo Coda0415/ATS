@@ -37,7 +37,7 @@ def get_contact_info(contact_id):
         'Authorization': f'Bearer {private_app_access_token}'
     }
 
-    url = f'https://api.hubapi.com/crm/v3/objects/contacts/{contact_id}?hapikey={portal_id}'
+    url = f'https://api.hubapi.com/crm/v3/objects/contacts/{contact_id}'
     response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
