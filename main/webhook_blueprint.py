@@ -1,8 +1,10 @@
 from flask import Flask, Blueprint, request, jsonify, render_template
+import requests
 
 webhook_blueprint = Blueprint('webhook', __name__)
 webhook_log = []  # A list to store the webhook payloads
-
+portal_id = '9145139'
+private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST'])
 def handle_hubspot_webhook():
     payload = request.json
@@ -19,4 +21,27 @@ def get_webhook_log():
 
 @webhook_blueprint.route('/webhook')
 def webhook():
-    return render_template('webhook_log.html')
+    # Fetch contact information for each payload
+    contacts = []
+    for payload in webhook_log:
+        contact_id = payload.get('objectId')
+        if contact_id:
+            contact = get_contact_info(contact_id)
+            contacts.append(contact)
+
+    return render_template('webhook_log.html', contacts=contacts)
+
+def get_contact_info(contact_id):
+    headers = {
+        'Authorization': f'Bearer {private_app_access_token}'
+    }
+
+    url = f'https://api.hubapi.com/crm/v3/objects/contacts/{contact_id}?hapikey={portal_id}'
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        contact_data = response.json()
+        return contact_data
+    else:
+        print(f"Failed to retrieve contact information. Status code: {response.status_code}")
+        return None
