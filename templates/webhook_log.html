@@ -34,7 +34,7 @@
             <pre>{{ payload | safe }}</pre>
             {% if payload.get('objectId') %}
                 <h2>Contact Information:</h2>
-                <pre>{{ get_contact_info(private_app_access_token, payload['objectId']) | safe }}</pre>
+                <pre>{{ get_contact_info(payload['objectId']) | safe }}</pre>
             {% endif %}
         {% endfor %}
     </div>
