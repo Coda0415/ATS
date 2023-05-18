@@ -29,13 +29,13 @@
 <body>
     <h1>Webhook Log</h1>
     <div id="log-container">
-        <!-- The webhook log will be dynamically inserted here -->
-    </div>
-
-    <div class="contact-info">
-        <h2>Contact Information:</h2>
-        {% for contact in contacts %}
-            <pre>{{ contact | safe }}</pre>
+        <h2>Webhook Payloads:</h2>
+        {% for payload in webhook_log %}
+            <pre>{{ payload | safe }}</pre>
+            {% if payload.get('objectId') %}
+                <h2>Contact Information:</h2>
+                <pre>{{ get_contact_info(private_app_access_token, payload['objectId']) | safe }}</pre>
+            {% endif %}
         {% endfor %}
     </div>
 
