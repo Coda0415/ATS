@@ -21,10 +21,9 @@ def get_webhook_log():
 
 @webhook_blueprint.route('/webhook')
 def webhook():
-    # Fetch contact information for each payload
     contacts = []
     for payload in webhook_log:
-        contact_id = payload.get('objectId')
+        contact_id = payload['objectId']  # Access 'objectId' directly from the payload
         if contact_id:
             contact = get_contact_info(contact_id)
             contacts.append(contact)
