@@ -1,30 +1,46 @@
-import logging
-from flask import Flask, request, render_template, Blueprint
-import hubspot
-from hubspot.crm.contacts import ApiException
+from flask import Flask, Blueprint, request, jsonify, render_template
+import requests
 
 webhook_blueprint = Blueprint('webhook', __name__)
-private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
-
-# Create an instance of the API client
-api_client = hubspot.Client.create_with_api_key(private_app_access_token)
+webhook_log = []  # A list to store the webhook payloads
 
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST'])
+def handle_hubspot_webhook():
+    payload = request.json
+    print('Received webhook payload:', payload)
+
+    # Add the webhook payload to the log
+    webhook_log.append(payload)
+
+    return '', 200
+
+@webhook_blueprint.route('/webhook/log', methods=['GET'])
+def get_webhook_log():
+    return jsonify(webhook_log)
+
+@webhook_blueprint.route('/webhook')
 def webhook():
-    try:
-        payload = request.get_json()
-        if isinstance(payload, list):
-            # Handle a list of payloads
-            if len(payload) > 0:
-                contact_id = payload[0].get('objectId')
-                # You can now use the contact_id variable in your further processing
-                app.logger.info('Received payload. Contact ID: %s', contact_id)
-        else:
-            # Handle a single payload
-            contact_id = payload.get('objectId')
-            # You can now use the contact_id variable in your further processing
-            app.logger.info('Received payload. Contact ID: %s', contact_id)
-        return 'Success'
-    except Exception as e:
-        app.logger.error('Error processing webhook payload: %s', str(e))
-        return 'Error', 500
+    # Fetch contact information for each payload
+    contacts = []
+    for payload in webhook_log:
+        contact_id = payload.get('objectId')
+        if contact_id:
+            contact = get_contact_info(contact_id)
+            contacts.append(contact)
+
+    return render_template('webhook_log.html', contacts=contacts)
+
+def get_contact_info(contact_id):
+    headers = {
+        'Authorization': f'Bearer {private_app_access_token}'
+    }
+
+    url = f'https://api.hubapi.com/crm/v3/objects/contacts/{contact_id}?hapikey={portal_id}'
+    response = requests.get(url, headers=headers)
+
+    if response.status_code == 200:
+        contact_data = response.json()
+        return contact_data
+    else:
+        print(f"Failed to retrieve contact information. Status code: {response.status_code}")
+        return None
