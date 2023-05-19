@@ -9,7 +9,7 @@ private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
 api_client = hubspot.Client(access_token=private_app_access_token)
 
 
-@webhook_blueprint.route('/webhook/hubspot', methods=['POST'])
+@webhook_blueprint.route('/webhook/hubspot', methods=['POST', 'GET'])
 def handle_hubspot_webhook():
     payload = request.json
     logging.debug('Received webhook payload: %s', payload)
