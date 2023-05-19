@@ -1,25 +1,16 @@
-import requests
+import hubspot
+from hubspot.crm.contacts import ApiException
 
-
-def retrieve_contact_info(private_app_access_token, contact_id):
-    headers = {
-        'Authorization': f'Bearer {private_app_access_token}'
-    }
-
-    url = f'https://api.hubapi.com/crm/v3/objects/contacts/{contact_id}'
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        contact_data = response.json()
-        return contact_data
-    else:
-        print(f"Failed to retrieve contact information. Status code: {response.status_code}")
-        return None
-
-# Example usage
 private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
 
-contact_info = retrieve_contact_info(private_app_access_token, contact_id)
-if contact_info is not None:
-    # Process the contact information
-    print(contact_info)
+
+
+# Create an instance of the API client
+api_client = hubspot.Client(access_token=private_app_access_token)
+
+try:
+    # Fetch the contact by ID
+    contact_fetched = api_client.crm.contacts.basic_api.get_by_id('1580051', properties=["firstname", "lastname", "phone", "appstatus","best_way_to_contact_you_","drugtestresult","hs_marketable_reason_id"])
+    print(contact_fetched)
+except ApiException as e:
+    print("Exception when requesting contact by ID: %s\n" % e)

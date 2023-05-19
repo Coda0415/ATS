@@ -1,56 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Webhook Log</title>
-    <style>
-        /* Add some basic styling as per your preferences */
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        pre {
-            background-color: #f7f7f7;
-            padding: 10px;
-        }
-        .contact-info {
-            margin-top: 30px;
-        }
-        .contact-info h2 {
-            margin-bottom: 10px;
-        }
-        .contact-info pre {
-            margin-bottom: 20px;
-        }
-    </style>
+    <title>Contact Information</title>
 </head>
 <body>
-    <h1>Webhook Log</h1>
-    <div id="log-container">
-        <h2>Webhook Payloads:</h2>
-        {% for payload in webhook_log %}
-            <pre>{{ payload | safe }}</pre>
-            {% if payload.get('objectId') %}
-                <h2>Contact Information:</h2>
-                <pre>{{ get_contact_info(payload['objectId']) | safe }}</pre>
-            {% endif %}
-        {% endfor %}
-    </div>
-
-    <script>
-        // JavaScript code to fetch and display the webhook log dynamically
-        fetch('/webhook/log')
-            .then(response => response.json())
-            .then(data => {
-                const logContainer = document.getElementById('log-container');
-                data.forEach(payload => {
-                    const pre = document.createElement('pre');
-                    pre.textContent = JSON.stringify(payload, null, 2);
-                    logContainer.appendChild(pre);
-                });
-            });
-    </script>
+    <h1>Contact Information</h1>
+    <ul>
+        <li><b>First Name:</b> {{ contact.properties.firstname.value }}</li>
+        <li><b>Last Name:</b> {{ contact.properties.lastname.value }}</li>
+        <li><b>Phone:</b> {{ contact.properties.phone.value }}</li>
+        <li><b>App Status:</b> {{ contact.properties.appstatus.value }}</li>
+        <li><b>Best Way to Contact You:</b> {{ contact.properties.best_way_to_contact_you_.value }}</li>
+        <li><b>Drug Test Result:</b> {{ contact.properties.drugtestresult.value }}</li>
+        <li><b>HS Marketable Reason ID:</b> {{ contact.properties.hs_marketable_reason_id.value }}</li>
+    </ul>
 </body>
 </html>
