@@ -11,13 +11,7 @@
             margin-bottom: 20px;
         }
         .log-entry {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
             margin-bottom: 10px;
-        }
-        .log-entry span {
-            font-weight: bold;
         }
     </style>
 </head>
@@ -26,47 +20,18 @@
     <div id="log-container"></div>
 
     <script>
-        function addLogEntry(payload) {
+        function addContactId(contactId) {
             var logContainer = document.getElementById('log-container');
-            var logEntry = document.createElement('div');
-            logEntry.className = 'log-entry';
-
-            var eventId = document.createElement('span');
-            eventId.innerText = 'Event ID: ' + payload.eventId;
-            logEntry.appendChild(eventId);
-
-            var objectId = document.createElement('span');
-            objectId.innerText = 'Contact ID: ' + payload.objectId;
-            logEntry.appendChild(objectId);
-
-            var propertyName = document.createElement('span');
-            propertyName.innerText = 'Property Name: ' + payload.propertyName;
-            logEntry.appendChild(propertyName);
-
-            var propertyValue = document.createElement('span');
-            propertyValue.innerText = 'Property Value: ' + payload.propertyValue;
-            logEntry.appendChild(propertyValue);
-
-            logContainer.prepend(logEntry);
+            var contactIdEntry = document.createElement('div');
+            contactIdEntry.className = 'log-entry';
+            contactIdEntry.innerText = 'Contact ID: ' + contactId;
+            logContainer.prepend(contactIdEntry);
         }
 
-        // Simulating the receiving of a payload
-        var examplePayload = {
-            "eventId": 2323513081,
-            "subscriptionId": 2082954,
-            "portalId": 9145139,
-            "appId": 1466086,
-            "occurredAt": 1684506669345,
-            "subscriptionType": "contact.propertyChange",
-            "attemptNumber": 0,
-            "objectId": 1580051,
-            "propertyName": "appstatus",
-            "propertyValue": "Test11",
-            "changeSource": "CRM_UI",
-            "sourceId": "userId:49844613"
-        };
+        // Simulating the receiving of a contact ID
+        var exampleContactId = '1580051';
 
-        addLogEntry(examplePayload);
+        addContactId(exampleContactId);
     </script>
 </body>
 </html>
