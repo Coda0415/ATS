@@ -1,18 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Contact Information</title>
+    <title>Webhook Log</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .log-entry {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .log-entry span {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <h1>Contact Information</h1>
-    <ul>
-        <li><b>First Name:</b> {{ contact.properties.firstname.value }}</li>
-        <li><b>Last Name:</b> {{ contact.properties.lastname.value }}</li>
-        <li><b>Phone:</b> {{ contact.properties.phone.value }}</li>
-        <li><b>App Status:</b> {{ contact.properties.appstatus.value }}</li>
-        <li><b>Best Way to Contact You:</b> {{ contact.properties.best_way_to_contact_you_.value }}</li>
-        <li><b>Drug Test Result:</b> {{ contact.properties.drugtestresult.value }}</li>
-        <li><b>HS Marketable Reason ID:</b> {{ contact.properties.hs_marketable_reason_id.value }}</li>
-    </ul>
+    <h1>Webhook Log</h1>
+    <div id="log-container"></div>
+
+    <script>
+        function addLogEntry(payload) {
+            var logContainer = document.getElementById('log-container');
+            var logEntry = document.createElement('div');
+            logEntry.className = 'log-entry';
+
+            var eventId = document.createElement('span');
+            eventId.innerText = 'Event ID: ' + payload.eventId;
+            logEntry.appendChild(eventId);
+
+            var objectId = document.createElement('span');
+            objectId.innerText = 'Contact ID: ' + payload.objectId;
+            logEntry.appendChild(objectId);
+
+            var propertyName = document.createElement('span');
+            propertyName.innerText = 'Property Name: ' + payload.propertyName;
+            logEntry.appendChild(propertyName);
+
+            var propertyValue = document.createElement('span');
+            propertyValue.innerText = 'Property Value: ' + payload.propertyValue;
+            logEntry.appendChild(propertyValue);
+
+            logContainer.prepend(logEntry);
+        }
+
+        // Simulating the receiving of a payload
+        var examplePayload = {
+            "eventId": 2323513081,
+            "subscriptionId": 2082954,
+            "portalId": 9145139,
+            "appId": 1466086,
+            "occurredAt": 1684506669345,
+            "subscriptionType": "contact.propertyChange",
+            "attemptNumber": 0,
+            "objectId": 1580051,
+            "propertyName": "appstatus",
+            "propertyValue": "Test11",
+            "changeSource": "CRM_UI",
+            "sourceId": "userId:49844613"
+        };
+
+        addLogEntry(examplePayload);
+    </script>
 </body>
 </html>

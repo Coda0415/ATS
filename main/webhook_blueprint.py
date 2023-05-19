@@ -12,29 +12,9 @@ api_client = hubspot.Client(access_token=private_app_access_token)
 
 
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST', 'GET'])
-def handle_hubspot_webhook():
+def webhook():
     payload = request.json
-    logging.debug('Received webhook payload: %s', payload)
-
-    if isinstance(payload, dict):
-        # Extract the contact ID from the payload
-        contact_id = payload.get('objectId')
-
-        try:
-            # Fetch the contact by ID
-            contact_fetched = api_client.crm.contacts.basic_api.get_by_id(contact_id,
-                                                                          properties=["firstname", "lastname", "phone",
-                                                                                      "appstatus",
-                                                                                      "best_way_to_contact_you_",
-                                                                                      "drugtestresult",
-                                                                                      "hs_marketable_reason_id"])
-
-            # Render the HTML template with contact information
-            return render_template('webhook_log.html', contact=contact_fetched)
-
-        except ApiException as e:
-            print("Exception when requesting contact by ID: %s\n" % e)
-    else:
-        print("Invalid payload format")
-
-    return '', 200
+    contact_id = payload['objectId']
+    # You can now use the contact_id variable in your further processing
+    print('Received payload. Contact ID:', contact_id)
+    return 'Success'
