@@ -1,3 +1,4 @@
+import logging
 from flask import Flask, request, render_template, Blueprint
 import hubspot
 from hubspot.crm.contacts import ApiException
