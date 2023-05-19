@@ -14,7 +14,7 @@ api_client = hubspot.Client(access_token=private_app_access_token)
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST', 'GET'])
 def webhook():
     payload = request.json
-    contact_id = payload['objectId']
+    contact_id = payload.get('objectId')
     # You can now use the contact_id variable in your further processing
     print('Received payload. Contact ID:', contact_id)
     return 'Success'
