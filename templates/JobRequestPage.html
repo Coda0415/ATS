@@ -58,9 +58,21 @@
         });
     }
 
-    document.addEventListener("DOMContentLoaded", function() {
-        addEventListeners();
+   document.addEventListener("DOMContentLoaded", function() {
+    addEventListeners();
+
+    document.getElementById("editButton").addEventListener("click", function() {
+        $('#confirmationModal').modal('hide');
     });
+
+    document.getElementById("submitButton").addEventListener("click", function() {
+        document.querySelector('form').submit();
+    });
+
+    document.getElementById("showConfirmationModal").addEventListener("click", function() {
+        $('#confirmationModal').modal('show');
+    });
+});
 </script>
 
 
@@ -218,8 +230,26 @@
 
     </div>
 </div>
-<input type="submit" value="Submit" class="btn btn-primary">
+<input type="button" value="Submit" class="btn btn-primary" id="showConfirmationModal">
+
 </form>
+    <div class="modal" tabindex="-1" role="dialog" id="confirmationModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmation</h5>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to submit this form?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="editButton">Edit</button>
+        <button type="button" class="btn btn-primary" id="submitButton">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>
 </div>
 {% endblock %}

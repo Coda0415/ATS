@@ -37,4 +37,5 @@ def display_data():
     global contact_fetched
     firstname = contact_fetched.get('properties', {}).get('firstname', None)
     lastname = contact_fetched.get('properties', {}).get('lastname', None)
-    return render_template('webhook_log.html', firstname=firstname, lastname=lastname)
+    appstatus = contact_fetched.get('properties', {}).get('appstatus',None)
+    return render_template('webhook_log.html', firstname=firstname, lastname=lastname, appstatus=appstatus)
