@@ -12,6 +12,6 @@ def hubspot_webhook():
     print(f"Received data: {data_storage}")
     return jsonify({"status":"ok"}), 200
 
-@app.route('/webhook/data')
+@webhook_blueprint.route('/webhook/data')
 def display_data():
     return render_template('webhookData.html', data=data_storage)
