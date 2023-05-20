@@ -1,40 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Webhook Log</title>
-    <style>
-        /* Add some basic styling as per your preferences */
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-        }
-        h1 {
-            margin-bottom: 20px;
-        }
-        pre {
-            background-color: #f7f7f7;
-            padding: 10px;
-        }
-    </style>
-</head>
 <body>
-    <h1>Webhook Log</h1>
-    <div id="log-container">
-        <!-- The webhook log will be dynamically inserted here -->
-    </div>
 
-    <script>
-        // JavaScript code to fetch and display the webhook log dynamically
-        fetch('/webhook/log')
-            .then(response => response.json())
-            .then(data => {
-                const logContainer = document.getElementById('log-container');
-                data.forEach(payload => {
-                    const pre = document.createElement('pre');
-                    pre.textContent = JSON.stringify(payload, null, 2);
-                    logContainer.appendChild(pre);
-                });
-            });
-    </script>
+<h2>Webhook Data:</h2>
+<p id="webhookData">{{ data }}</p>
+
 </body>
 </html>
