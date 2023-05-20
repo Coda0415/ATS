@@ -24,11 +24,13 @@ def fetch_contact(contact_id):
     try:
         # Fetch the contact by ID
         contact = api_client.crm.contacts.basic_api.get_by_id(contact_id, properties=["firstname", "lastname", "phone", "appstatus","best_way_to_contact_you_","drugtestresult","hs_marketable_reason_id"])
-        print(contact)
-        return contact
+        contact_dict = contact.to_dict()
+        print(contact_dict)
+        return contact_dict
     except ApiException as e:
         print("Exception when requesting contact by ID: %s\n" % e)
         return {}
+
 
 @webhook_blueprint.route('/webhook/data')
 def display_data():
