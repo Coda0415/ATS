@@ -33,4 +33,6 @@ def fetch_contact(contact_id):
 @webhook_blueprint.route('/webhook/data')
 def display_data():
     global contact_fetched
-    return render_template('webhook_log.html', data=contact_fetched)
+    firstname = contact_fetched.get('properties', {}).get('firstname', None)
+    lastname = contact_fetched.get('properties', {}).get('lastname', None)
+    return render_template('webhook_log.html', firstname=firstname, lastname=lastname)
