@@ -1,5 +1,6 @@
 from flask import Flask, Blueprint, request, jsonify, render_template
 import requests
+import json
 
 webhook_blueprint = Blueprint('webhook', __name__)
 webhook_log = []  # A list to store the webhook payloads
