@@ -14,4 +14,4 @@ def hubspot_webhook():
 
 @webhook_blueprint.route('/webhook/data')
 def display_data():
-    return render_template('webhook_log.html.html', data=data_storage)
+    return render_template('webhook_log.html', data=data_storage)
