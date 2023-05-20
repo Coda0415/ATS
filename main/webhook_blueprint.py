@@ -5,42 +5,7 @@ webhook_blueprint = Blueprint('webhook', __name__)
 webhook_log = []  # A list to store the webhook payloads
 
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST'])
-def handle_hubspot_webhook():
-    payload = request.json
-    print('Received webhook payload:', payload)
-
-    # Add the webhook payload to the log
-    webhook_log.append(payload)
-
-    return '', 200
-
-@webhook_blueprint.route('/webhook/log', methods=['GET'])
-def get_webhook_log():
-    return jsonify(webhook_log)
-
-@webhook_blueprint.route('/webhook')
-def webhook():
-    # Fetch contact information for each payload
-    contacts = []
-    for payload in webhook_log:
-        contact_id = payload.get('objectId')
-        if contact_id:
-            contact = get_contact_info(contact_id)
-            contacts.append(contact)
-
-    return render_template('webhook_log.html', contacts=contacts)
-
-def get_contact_info(contact_id):
-    headers = {
-        'Authorization': f'Bearer {private_app_access_token}'
-    }
-
-    url = f'https://api.hubapi.com/crm/v3/objects/contacts/{contact_id}?hapikey={portal_id}'
-    response = requests.get(url, headers=headers)
-
-    if response.status_code == 200:
-        contact_data = response.json()
-        return contact_data
-    else:
-        print(f"Failed to retrieve contact information. Status code: {response.status_code}")
-        return None
+def hubspot_webhook():
+    data = json.loads(request.data)
+    print(f"Received data: {data}")
+    return jsonify({"status":"ok"}), 200
