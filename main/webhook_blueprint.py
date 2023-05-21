@@ -32,7 +32,7 @@ def fetch_contact(contact_id):
         firstname = contact_dict.get('properties', {}).get('firstname', None)
         lastname = contact_dict.get('properties', {}).get('lastname', None)
 
-        with app.app_context():
+        with webhook_blueprint.app_context():
             # Search for the applicant in the database
             applicant = applicants.query.filter_by(firstname=firstname, lastname=lastname).first()
             if applicant:
