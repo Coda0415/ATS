@@ -3,7 +3,7 @@ import json
 import hubspot
 from hubspot.crm.contacts import ApiException
 from .models import applicants
-from app import db
+from . import db
 
 webhook_blueprint = Blueprint('webhook', __name__)
 private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
@@ -22,7 +22,7 @@ def hubspot_webhook():
     contact_fetched = fetch_contact(contact_id)
     return jsonify({"status":"ok"}), 200
 
-def fetch_contact(contact_id):
+def fetch_contact(contact_id, db):
     try:
         # Fetch the contact by ID
         contact = api_client.crm.contacts.basic_api.get_by_id(contact_id, properties=["firstname", "lastname", "phone", "appstatus","best_way_to_contact_you_","drugtestresult","hs_marketable_reason_id"])
