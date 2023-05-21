@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify, render_template
 import json
 import hubspot
 from hubspot.crm.contacts import ApiException
+from .models import applicants
 
 webhook_blueprint = Blueprint('webhook', __name__)
 private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
@@ -26,6 +27,22 @@ def fetch_contact(contact_id):
         contact = api_client.crm.contacts.basic_api.get_by_id(contact_id, properties=["firstname", "lastname", "phone", "appstatus","best_way_to_contact_you_","drugtestresult","hs_marketable_reason_id"])
         contact_dict = contact.to_dict()
         print(contact_dict)
+
+        # Extract firstname and lastname
+        firstname = contact_dict.get('properties', {}).get('firstname', None)
+        lastname = contact_dict.get('properties', {}).get('lastname', None)
+
+        with app.app_context():
+            # Search for the applicant in the database
+            applicant = applicants.query.filter_by(firstname=firstname, lastname=lastname).first()
+            if applicant:
+                # If the applicant is found, update the hubspotcontactid field
+                applicant.hubspotcontactid = contact_id
+                db.session.commit()
+                print(f'Updated hubspotcontactid for {firstname} {lastname}')
+            else:
+                print(f'Applicant {firstname} {lastname} not found in the database')
+
         return contact_dict
     except ApiException as e:
         print("Exception when requesting contact by ID: %s\n" % e)
