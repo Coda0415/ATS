@@ -3,7 +3,7 @@ import json
 import hubspot
 from hubspot.crm.contacts import ApiException
 from .models import applicants
-from . import db
+from app import db
 
 webhook_blueprint = Blueprint('webhook', __name__)
 private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
