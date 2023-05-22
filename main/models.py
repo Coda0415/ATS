@@ -4922,6 +4922,7 @@ class applicants(db.Model):
     drugscreen = db.Column(db.Text)
     positionid = db.Column(db.Text)
     jobnumber = db.Column(db.Text)
+    preferred_name = db.Column(db.Text)
 
     def __repr__(self):
         return f'<applicants {self.id}>'
