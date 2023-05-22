@@ -1,4 +1,6 @@
 from flask import Blueprint, render_template, request
+from .models import applicants
+from . import db
 
 esign_blueprint = Blueprint('esign', __name__)
 
@@ -19,9 +21,25 @@ def esign():
         signature = form_data.get('applicant_signature')
         date_acknowledgement = form_data.get('date_of_electronic_acknowledgement')
 
-        # Handle the form submission as needed
+        # Find the applicant in the database
+        firstname = request.args.get('firstname')
+        lastname = request.args.get('lastname')
+        email = request.args.get('email')
+        applicant_id = request.args.get('applicantid')
 
-        return 'Form submitted successfully'
+        applicant = applicants.query.filter_by(firstname=firstname, lastname=lastname, email=email,
+                                               applicantid=applicant_id).first()
+
+        if applicant:
+            # Update the applicant's information
+            applicant.applicant_statement_acknowledgement = i_acknowledge
+            applicant.applicant_statement_signature = signature
+            applicant.applicant_statement_date_acknowledgement = date_acknowledgement
+
+            db.session.commit()
+            return 'Form submitted successfully'
+        else:
+            return 'Applicant not found in the database', 404
 
     return render_template('esign.html', position_id=position_id, regional_manager=regional_manager,
                            account_manager=account_manager, job_number=job_number)

@@ -4923,6 +4923,9 @@ class applicants(db.Model):
     positionid = db.Column(db.Text)
     jobnumber = db.Column(db.Text)
     preferred_name = db.Column(db.Text)
+    applicant_statement_signature = db.Column(db.Text)
+    applicant_statement_acknowledgement = db.Column(db.Text)
+    applicant_statement_date_acknowledgement = db.Column(db.Text)
 
     def __repr__(self):
         return f'<applicants {self.id}>'
