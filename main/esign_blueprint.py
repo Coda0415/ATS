@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request
 from .models import applicants
 from . import db
+import requests
 
 esign_blueprint = Blueprint('esign', __name__)
-
 
 @esign_blueprint.route('/esign', methods=['GET', 'POST'])
 def esign():
@@ -37,7 +37,56 @@ def esign():
             applicant.applicant_statement_date_acknowledgement = date_acknowledgement
 
             db.session.commit()
-            return 'Form submitted successfully'
+
+            # Submit the form data to HubSpot
+            api_url = f'https://api.hsforms.com/submissions/v3/integration/submit/9145139/59b3ece4-87b9-4a2a-a513-e323ad815376'
+            private_app_access_token = 'YOUR_PRIVATE_APP_ACCESS_TOKEN'
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {private_app_access_token}'
+            }
+
+            data = {
+                'fields': [
+                    {
+                        'objectTypeId': '0-1',
+                        'name': 'applicant_signature',
+                        'value': signature
+                    },
+                    {
+                        'objectTypeId': '0-1',
+                        'name': 'i_acknowledge_receipt_and_understanding_of_the_above',
+                        'value': i_acknowledge
+                    },
+                    {
+                        'objectTypeId': '0-1',
+                        'name': 'date_of_electronic_acknowledgement',
+                        'value': date_acknowledgement
+                    },
+                    {
+                        'objectTypeId': '0-1',
+                        'name': 'firstname',
+                        'value': firstname
+                    },
+                    {
+                        'objectTypeId': '0-1',
+                        'name': 'lastname',
+                        'value': lastname
+                    },
+                    {
+                        'objectTypeId': '0-1',
+                        'name': 'email',
+                        'value': email
+                    }
+                ]
+            }
+
+            response = requests.post(api_url, json=data, headers=headers)
+
+            if response.status_code == 200:
+                return 'Form submitted successfully'
+            else:
+                return f'Error submitting form: {response.text}', response.status_code
         else:
             return 'Applicant not found in the database', 404
 
