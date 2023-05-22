@@ -273,7 +273,7 @@ def application():
             return redirect(url_for('esign_blueprint.esign', firstname=firstname, lastname=lastname, email=email,
                                     applicantid=applicant_id))
             else:
-            return f'Error submitting form: {response.text}', 400
+                return f'Error submitting form: {response.text}', 400
 
     return render_template('application.html', position_id=position_id, regional_manager=regional_manager,
                            account_manager=account_manager)
