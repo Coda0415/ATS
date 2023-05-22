@@ -1,248 +1,214 @@
-/Users/colindavis/opt/anaconda3/envs/ATS/bin/python /Users/colindavis/PycharmProjects/ATS/filetree.py
+I have a https server.  on that server, i have an html form that allows my managers to post open jobs that they have. Those jobs need to be posted to Indeed.  Lets develop something that will convert the open job into xml for indeed to use to post the job.  We're using the indeed API.
 
-├──static
-├──instance
-└──app.py
-    from main import create_app
+Heres my current Job Request Form:
+JobRequestPage.py:
+from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask_login import login_required, current_user
+from . import db
+from .models import jobmasterlist
+from flask_wtf import FlaskForm
 
-    app = create_app()
+job_request_page = Blueprint('job_request_page', __name__)
+@login_required
+@job_request_page.route("/JobRequestPage", methods=["GET", "POST"])
+def job_request_form():
+    form = FlaskForm()
+    if not current_user.is_authenticated:
+        return redirect(url_for("create_user.create_user"))
+    if current_user.role not in ['RegionalManager', 'Admin']:
+        abort(403, description="Access denied. You must be a Regional Manager or Admin to access this page.")
 
-    if __name__ == '__main__':
-        app.run(debug=True)
-├──templates
-│   └──base.html
-│       <!doctype html>
-│       <html lang="en">
-│         <head>
-│           <!-- Required meta tags -->
-│           <meta charset="utf-8">
-│           <meta name="viewport" content="width=device-width, initial-scale=1">
-│
-│           <!-- Bootstrap CSS -->
-│           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-│
-│           <title>{% block title %} {% endblock %}</title>
-│         </head>
-│         <body>
-│           <div class="container">
-│             {% block content %} {% endblock %}
-│           </div>
-│
-│           <!-- Optional JavaScript -->
-│           <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-│           <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-│           <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-│           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-│         </body>
-│       </html>
-│   └──login.html
-            HTML file
-│   └──create_user.html
-            HTML file
-│   └──JobRequestPage.html
-            HTML FILE
-├──main
-│   └──models.py
-│       from flask_login import UserMixin
-│       from . import db
-│
-        class MyModelsHere
+    user_region = current_user.region
+    job_titles = ["Janitorial Cleaner", "Team Coordinator", "Team Lead", "Floor Tech"]
 
+    try:
+        if current_user.role == 'Admin':
+            job_numbers = [{"JobNumber": job.jobnumber, "Region": job.region} for job in
+                           db.session.query(jobmasterlist.jobnumber, jobmasterlist.region).all()]
+        else:
+            job_numbers = [{"JobNumber": job.jobnumber, "Region": job.region} for job in
+                           db.session.query(jobmasterlist.jobnumber, jobmasterlist.region).filter(
+                               jobmasterlist.region == user_region).all()]
+    except Exception as e:
+        return "Error: Could not retrieve job numbers from database.", 500
+    question_data = [
+        {"type": "MULTIPLE_CHOICE", "question": "Is this Position Full-Time or Part-Time?",
+         "options": ["Full-Time", "Part-Time"]},
+        {"type": "RADIO", "question": "Part-Time or Full-Time?", "options": ["Part-Time", "Full-Time"]},
+        {"type": "TEXT", "question": "What is the hourly pay for this postion?"},
+        {"type": "TIME", "question": "Shift Starting Time"},
+        {"type": "TIME", "question": "Shift Ending Time"},
+        {"type": "TEXT", "question": "Number of Hours this Job can Flex:"},
+        {"type": "CHECKBOX", "question": "What Days does this Position work?",
+         "options": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]},
+        {"type": "TEXT", "question": "How many positions do you need to fill?"},
+        {"type": "CHECKBOX", "question": "Select any Special Instructions:",
+         "options": ["SOB", "Steel Toe Boots", "Safety Glasses", "Hard Had", "Able to Wear PPE",
+                     "Floor Maintenance Experience", "MVR", "Drivers License", "Vaccination", "Vaccination Records",
+                     "Lift Push Pull 50lbs for Whole Shift"]}
+    ]
+    regions = ["Bowling Green Region", "Evansville Region", "Clarksville Region", "Elizabethtown Region",
+               "Bloomington Region"]
 
-│   └──__init__.py
-│       from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager
+    return render_template("JobRequestPage.html", question_data=question_data, job_titles=job_titles,
+                           job_numbers=job_numbers, user_role=current_user.role, regions=regions,form=form)
 
-# Initialize SQLAlchemy and LoginManager
-db = SQLAlchemy()
-login_manager = LoginManager()
+JobRequestSubmission.py:
+from flask import Blueprint, request, flash, redirect, url_for
+from flask_login import login_required, current_user
+from datetime import datetime
+from . import db
+from .models import openpositionsroster, jobmasterlist
 
+job_request_submission = Blueprint('job_request_submission', __name__)
 
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
+def convert_to_12_hour_format(time24):
+    time_object = datetime.strptime(time24, "%H:%M")
+    formatted_time = time_object.strftime("%I:%M%p")
+    formatted_time = formatted_time.replace("AM", "a").replace("PM", "p")
 
+    if formatted_time.startswith("0"):
+        formatted_time = formatted_time[1:]
 
-# Function to create a Flask app
-def create_app():
-    # Create a Flask instance
-    app = Flask(__name__, instance_relative_config=True, template_folder='../templates')
+    return formatted_time
 
-    # Set the secret key
-    app.config['SECRET_KEY'] = 'Qazedcr,fvtgbyhn415'
+def find_missing_days(day_input):
+    days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+    days_dict = dict(zip(days, range(1, 8)))
 
-    # Load configuration
-    app.config.from_pyfile('config.py', silent=True)
+    days_short = [day[:3] for day in day_input if (day_short := day.strip()[:3]) in days]
 
-    # Set the database URI and disable SQLALCHEMY_TRACK_MODIFICATIONS
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///../instance/frantz.db'
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    day_numbers = sorted([days_dict[day] for day in days_short])
 
-    # Initialize the app with the SQLAlchemy database
-    db.init_app(app)
+    working_days = [day_numbers[0]]
+    is_consecutive = [True]
 
-    # Initialize the app with the LoginManager
-    login_manager.init_app(app)
+    for i in range(1, len(day_numbers)):
+        diff = (day_numbers[i] - day_numbers[i - 1]) % 7
+        if diff == 1:
+            working_days.append(day_numbers[i])
+            is_consecutive.append(True)
+        else:
+            working_days.append(day_numbers[i])
+            is_consecutive.append(False)
 
-    # Create all the necessary database tables
-    with app.app_context():
-        db.create_all()
+    formatted_days = [days[working_days[0] - 1]]
 
-    # Import and register blueprints
-    from .views import main as main_blueprint
-    app.register_blueprint(main_blueprint)
+    for i in range(1, len(working_days)):
+        if is_consecutive[i]:
+            if i == len(working_days) - 1 or not is_consecutive[i + 1]:
+                formatted_days.append(f"-{days[working_days[i] - 1]}")
+            continue
+        else:
+            formatted_days.append(f",{days[working_days[i] - 1]}")
 
-    from .create_user_blueprint import create_user_blueprint
-    app.register_blueprint(create_user_blueprint)
+    return "".join(formatted_days)
 
-    from .JobRequestPage import job_request_page
-    app.register_blueprint(job_request_page)
+def create_open_position_ids(job_number, employment_type, shift_start_time, num_positions):
+    employment_type_short = "FT" if employment_type == "Full-Time" else "PT"
 
-    from .JobRequestSubmission import job_request_submission
-    app.register_blueprint(job_request_submission)
+    # Determine the shift number based on the shift_start_time
+    shift_number = 0
+    if 6 <= shift_start_time.hour < 14:
+        shift_number = 1
+        shift_name = '1st'
+    elif 14 <= shift_start_time.hour < 22:
+        shift_number = 2
+        shift_name = '2nd'
+    elif 22 <= shift_start_time.hour or shift_start_time.hour < 6:
+        shift_number = 3
+        shift_name = '3rd'
 
-    from .open_positions_blueprint import open_positions_blueprint
-    app.register_blueprint(open_positions_blueprint)
+    open_position_ids = []
+    for position_index in range(1, num_positions + 1):
+        open_position_id = f"{job_number}.{employment_type_short}.{shift_number}.{position_index}"
+        open_position_ids.append(open_position_id)
 
-    from .position_detail_blueprint import position_detail_blueprint
-    app.register_blueprint(position_detail_blueprint)
+    return open_position_ids, employment_type_short, shift_name
 
-    # Return the created Flask app
-    return app
+# def shift_number_to_name(shift_number):
+#     if shift_number == 1:
+#         return "1st"
+#     elif shift_number == 2:
+#         return "2nd"
+#     elif shift_number == 3:
+#         return "3rd"
+#     else:
+#         return "Other"
 
-# Import the necessary models
-from main.models import (User, RegionalManagerMasterList, AccountManagerMasterList, Evansville, BowlingGreen, Elizabethtown, Bloomington, Clarksville,JobMasterList, OpenPositionsRoster)
+@login_required
+@job_request_submission.route("/JobRequestSubmission", methods=["POST"])
+def submit_job_request():
+    form_data = request.form
+    starting_time_24 = form_data.get("starting-time")
+    ending_time_24 = form_data.get("ending-time")
 
-│   └──create_user_blueprint.py
-│           PYTHON file
-│   └──JobRequestSubmission.py
-│           Python file
-│   └──JobRequestPage.py
-│           PYTHON file
-│   └──views.py
-│           PYTHON file
-│   └──open_positions_blueprint.py
-│           PYTHON file
-│   └──position_detail_blueprint.py
-│           PYTHON file
+    starting_time_12 = convert_to_12_hour_format(starting_time_24)
+    ending_time_12 = convert_to_12_hour_format(ending_time_24)
+    workdays_input = request.form.getlist("workdays[]")
+    workdays_range = find_missing_days(workdays_input)
 
+    # Convert the start time to a datetime object
+    shift_start_time = datetime.strptime(starting_time_24, "%H:%M")
 
+    # Get the number of positions from the form data
+    num_positions = int(form_data.get("num_positions", 1))
 
+    # Convert the start time to a datetime object
+    shift_start_time = datetime.strptime(starting_time_24, "%H:%M")
 
+    # Create the PositionIDs and get the abbreviated employment type
+    position_ids, employment_type_short, shift_name = create_open_position_ids(
+        form_data.get('job_number'), form_data.get('employment_type'), shift_start_time, num_positions
+    )
 
-=====================================================
+    # # Get the shift name based on the shift number
+    # shift_name = shift_number_to_name(shift_number)
 
-We need to create a html form and flask endpoint.  Remember that we're using the flask blueprint method:
+    # Retrieve data from JobsMasterList
+    job_number = form_data.get("job_number")
+    job_data = jobmasterlist.query.filter_by(jobnumber=job_number).first()
+    print(form_data)
+    for attr, value in job_data.__dict__.items():
+        print(f"{attr}: {type(value)}")
 
-Lets call it employeetermform.  We're going to also need to create a table called termedemployeelist, but we'll get to that later.
+    print()
+    # Loop through the PositionIDs and insert each one into the database
+    for position_id in position_ids:
+        existing_position = openpositionsroster.query.filter_by(positionid=position_id).first()
 
-this form will be used to move employees from the employeemasterlist to our termedemployeelist,
+        if existing_position is None:
+            new_open_position = openpositionsroster(
+                positionid=position_id,
+                jobnumber=form_data.get('job_number'),
+                jobtitle=form_data.get('job_title'),
+                employmenttype=employment_type_short,
+                wage=form_data.get('hourly-pay'),
+                businesssegment=job_data.businesssegment,
+                jobcity=job_data.jobcity,
+                jobdescription=job_data.jobname,
+                jobzip = job_data.jobzip.replace("-", ""),
+                region=job_data.region,
+                accountmanager=job_data.accountmanager,
+                regionalmanager=job_data.regionalmanager,
+                shift=shift_name,
+                specialinstructions=','.join(request.form.getlist("special-instructions[]")),
+                workdays=workdays_range,
+                starttime=starting_time_12,
+                endtime=ending_time_12,
+                flextime=form_data.get('flex-hours'),
+                sobamount=form_data.get('sobAmount'),
+                sobdays=form_data.get('sobDays')
+        )
+            db.session.add(new_open_position)
+        else:
+            print(f"Position with PositionID {position_id} already exists. Skipping insertion.")
 
-I will give you the questions and descriptions of them:  We want to get the name of the user by checking the user email against the manager email, in the accountmanagermasterlist table or the regionalamanagermasterlist table depending whether there role is AccountManager or RegionalManager, if account manager we want to check the accountmanager column in the table jobmasterlist, and return the jobnumber list.
+    # Commit the changes to the database
+    db.session.commit()
 
-question 1 will use this list: What is the job#
-it is a dropdown list
+    # Print a message to indicate successful insertion
+    print(f"Inserted new positions: {position_ids}")
 
-Question2 will need to search the employeemasterlist for all employees with the primaryjob equal to question1. it is a dropdown list. It asks: Team Member Name?
-
-question 3, this wont be a question, but it will display the Employee number of the team member selected in question2
-
-question 4 I would a calendar picker, the question asks: Last Day Worked?
-
-question 5. These are radio buttons, it asks: Type of Termination?
-there are seven options, and they are
-1. No call/ No show.
-2. Discharged.
-3. Quit - with less than 2 weeks notice.
-4. Quit - with 2 week notice or longer.
-5. Quit - no notice.
-6. Lost account/Job Assignment ended.
-7. Never started/ Never worked any hours.
-
- Question 6. If 3-7 are chosen, show this question next. Reason for Team Member Leaving?
-if 1 or 2 is chosen, don't show that question. This is a text box.
-
-Question 7: Additional information related to Team Members termination? this is a text box.  And if 2 is chosen from above, this field is required.  if any of the others are chosen its optional.
-
-Question 8. Does this postion need to be refilled?
-Yes or No radio buttons.
-
-Finally, we're going to have a series of categories with a slider and a check box that says additional comments.
-if additional comments is checked, show a text box that allows text input.
-I'd like the slider to count from 1-10.
-
-Category 1: Dependability
-Category 2: Ability
-Category 3: Attitude toward job
-Category 4: Attitude toward supervisor
-Category 5: Attitude toward co-workers
-Category 6: Leadership
-Category 7: Work without supervision
-
-===============================================
-I need to add a table to my postgresql database.
-
-my database is called frantz, the username is coda415, and the password is Qwerty415.
-
-The columns are:
- id                        | integer |           | not null |
- employeenumber            | integer |           |          |
- firstname                 | text    |           |          |
- lastname                  | text    |           |          |
- hiredate                  | text    |           |          |
- classificationdescription | text    |           |          |
- employeetypedescription   | text    |           |          |
- supervisordescription     | text    |           |          |
- jobnumber                 | text    |           |          |
- jobname                   | text    |           |          |
- categorydescription       | text    |           |          |
- region                    | text    |           |          |
- title                     | text    |           |          |
- jobstate                  | text    |           |          |
- companyaddress2           | text    |           |          |
- uctaxpayeridnumber        | text    |           |          |
- jobaddress                | text    |           |          |
- jobaddress2               | text    |           |          |
- jobcity                   | text    |           |          |
- jobzip                    | text    |           |          |
- employmenttype            | text
-lastdayworked
-reasonforleaving
-additionalinformation
-dependabilityslider
-dependabilitycomments
-abilityslider
-abilitycomments
-attitudetowardjobslider
-attitudetowardjobcomments
-attitudetowardsupervisorslider
-attitudetowardsupervisorcomments
-attitudetowardcoworkersslider
-attitudetowardcoworkerscomments
-leadershipslider
-leadershipcomments
-workwithoutsupervisionslider
-workwithoutsupervisioncomments
-totalevalscore
-eligibleforhire
-eligibleforhiredate
-
-
-ALTER TABLE public.applicants
-ADD COLUMN applicantid integer,
-ADD COLUMN accountmanager text,
-ADD COLUMN regionalmanager text,
-ADD COLUMN eligibleforhire boolean,
-ADD COLUMN applicantstatus text,
-ADD COLUMN hubspotcontactid text,
-ADD COLUMN contacthistory text,
-ADD COLUMN lastcontact date,
-ADD COLUMN lastcontacttype text,
-ADD COLUMN nextcontact date,
-ADD COLUMN nextcontacttype text,
-ADD COLUMN dateapplied date,
-ADD COLUMN backgroundcheck boolean,
-ADD COLUMN idstatus text,
-ADD COLUMN drugscreen boolean,
-ADD COLUMN dateapplied date;
+    # Redirect back to the JobRequestPage after submission
+    return redirect(url_for("job_request_page.job_request_form"))

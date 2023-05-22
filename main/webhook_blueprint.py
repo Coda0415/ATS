@@ -19,7 +19,7 @@ def hubspot_webhook():
     contact_id = data[0].get('objectId', None)  # extract the objectId from the first dictionary in the list
     print(f"Received object ID: {contact_id}")
     global contact_fetched
-    contact_fetched = fetch_contact(contact_id)
+    contact_fetched = fetch_contact(contact_id, db)
     return jsonify({"status":"ok"}), 200
 
 def fetch_contact(contact_id, db):
