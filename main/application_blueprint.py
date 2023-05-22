@@ -270,7 +270,7 @@ def application():
             email = new_application.email
             applicant_id = new_application.applicantid
 
-            return redirect(url_for('esign_blueprint.esign', firstname=firstname, lastname=lastname, email=email,
+            return redirect(url_for('esign.esign', firstname=firstname, lastname=lastname, email=email,
                                     applicantid=applicant_id))
         else:
             return f'Error submitting form: {response.text}', 400
