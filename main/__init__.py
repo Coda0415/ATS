@@ -67,6 +67,9 @@ def create_app():
     from .webhook_blueprint import webhook_blueprint
     app.register_blueprint(webhook_blueprint)
 
+    from .esign_blueprint import esign_blueprint
+    app.register_blueprint(esign_blueprint)
+
 
     # Return the created Flask app
     return app
