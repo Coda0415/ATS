@@ -279,7 +279,7 @@ def submit_application():
     new_application = pickle.loads(serialized_application)  # Deserialize the application object
 
 
-applicantid = new_application.applicantid
+    applicantid = new_application.applicantid
     firstname = new_application.firstname
     lastname = new_application.lastname
     email = new_application.email
