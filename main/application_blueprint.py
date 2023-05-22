@@ -270,7 +270,12 @@ def application():
 
 @application_blueprint.route('/submit_application', methods=['GET'])
 def submit_application():
-    new_application = request.args.get('new_application')  # Retrieve the new_application object from the query parameter
+    encoded_application = request.args.get('new_application')  # Retrieve the encoded application object from the query parameter
+
+    serialized_application = bytes.fromhex(encoded_application)  # Convert the string back to bytes
+    new_application = pickle.loads(serialized_application)  # Deserialize the application object
+
+
     applicantid = new_application.applicantid
     firstname = new_application.firstname
     lastname = new_application.lastname
