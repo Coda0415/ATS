@@ -34,6 +34,11 @@ def application():
                 },
                 {
                     'objectTypeId': '0-1',
+                    'name': 'preferred_name',
+                    'value': form_data.get('preferred_name', '')
+                },
+                {
+                    'objectTypeId': '0-1',
                     'name': 'are_you_at_least_18_years_old_',
                     'value': form_data.get('are_you_at_least_18_years_old_', '')
                 },
@@ -250,7 +255,8 @@ def application():
                 drugscreen=None,
                 # passed, failed, or null
                 positionid = request.args.get('position_id'),
-                jobnumber=request.args.get('job_number')
+                jobnumber=request.args.get('job_number'),
+                preferred_name=request.args.get('preferred_name')
             )
 
             db.session.add(new_application)
