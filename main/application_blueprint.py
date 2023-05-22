@@ -4,6 +4,8 @@ from .models import applicants
 from datetime import datetime
 from . import db
 from .functions import generate_applicant_id
+import base64
+import pickle
 
 
 application_blueprint = Blueprint('application', __name__)
@@ -272,11 +274,12 @@ def application():
 def submit_application():
     encoded_application = request.args.get('new_application')  # Retrieve the encoded application object from the query parameter
 
-    serialized_application = bytes.fromhex(encoded_application)  # Convert the string back to bytes
+    serialized_application = base64.urlsafe_b64decode(
+        encoded_application.encode())  # Convert the URL-safe base64 string back to bytes
     new_application = pickle.loads(serialized_application)  # Deserialize the application object
 
 
-    applicantid = new_application.applicantid
+applicantid = new_application.applicantid
     firstname = new_application.firstname
     lastname = new_application.lastname
     email = new_application.email
