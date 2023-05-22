@@ -5,7 +5,6 @@ from datetime import datetime
 from . import db
 from .functions import generate_applicant_id
 
-new_application = None  # Define the new_application object at a higher scope
 
 application_blueprint = Blueprint('application', __name__)
 
@@ -271,10 +270,8 @@ def application():
 
 @application_blueprint.route('/submit_application', methods=['GET'])
 def submit_application():
-    global new_application  # Declare new_application as a global variable
-    # Process the form submission and save the data
+    new_application = request.args.get('new_application')  # Retrieve the new_application object from the query parameter
     applicantid = new_application.applicantid
-    # Redirect to the 'esign' page with the necessary parameters
     firstname = new_application.firstname
     lastname = new_application.lastname
     email = new_application.email
