@@ -263,7 +263,7 @@ def application():
 
             db.session.add(new_application)
             db.session.commit()
-            return redirect(url_for('application.submit_application'))  # Redirect to the submit_application endpoint
+            return redirect(url_for('application.submit_application', new_application=new_application))  # Redirect to the submit_application endpoint
 
         else:
             return f'Error submitting form: {response.text}', 400
