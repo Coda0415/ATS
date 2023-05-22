@@ -5,6 +5,8 @@ from datetime import datetime
 from . import db
 from .functions import generate_applicant_id
 
+new_application = None  # Define the new_application object at a higher scope
+
 application_blueprint = Blueprint('application', __name__)
 
 @application_blueprint.route('/application', methods=['GET', 'POST'])
@@ -261,7 +263,20 @@ def application():
 
             db.session.add(new_application)
             db.session.commit()
-            return f'Form submitted successfully. Contact ID: '
+            return redirect(url_for('application.submit_application'))  # Redirect to the submit_application endpoint
+
         else:
             return f'Error submitting form: {response.text}', 400
     return render_template('application.html', position_id=position_id, regional_manager=regional_manager,account_manager=account_manager)
+
+@application_blueprint.route('/submit_application', methods=['GET'])
+def submit_application():
+    global new_application  # Declare new_application as a global variable
+    # Process the form submission and save the data
+    applicantid = new_application.applicantid
+    # Redirect to the 'esign' page with the necessary parameters
+    firstname = new_application.firstname
+    lastname = new_application.lastname
+    email = new_application.email
+
+    return redirect(url_for('esign_blueprint.esign', firstname=firstname, lastname=lastname, email=email, applicantid=applicantid))

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+<div class="container">
+    <form action="#" method="post">
+        <input type="hidden" name="position_id" value="{{ position_id }}">
+        <input type="hidden" name="regional_manager" value="{{ regional_manager }}">
+        <input type="hidden" name="account_manager" value="{{ account_manager }}">
+        <input type="hidden" name="job_number" value="{{ job_number }}">
+
+        <div class="checkbox">
+            <input type="checkbox" name="i_acknowledge_receipt_and_understanding_of_the_above" id="acknowledge" required>
+            <label for="acknowledge">I acknowledge receipt and understanding of the above</label>
+        </div>
+
+        <br>
+
+        <label for="applicant_signature">Applicant Signature</label>
+        <input type="text" name="applicant_signature" id="applicant_signature" required>
+
+        <br>
+        <br>
+
+        <div class="inline">
+            <label for="date_of_electronic_acknowledgement">Date of Electronic Acknowledgement</label>
+            <input type="date" name="date_of_electronic_acknowledgement" id="date_of_electronic_acknowledgement" required>
+        </div>
+
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+{% endblock %}
