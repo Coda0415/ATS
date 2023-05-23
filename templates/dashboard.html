@@ -167,17 +167,25 @@
     <!-- Add the following JavaScript code -->
      <script>
         // Function to open the modal
-        function openModal(modalId) {
-            $('#' + modalId).modal({
-                backdrop: 'static',
-                keyboard: false
-            });
-        }
+    function openModal(modalId) {
+        $('#' + modalId).modal({
+            backdrop: 'static',
+            keyboard: false
+        });
+    }
 
-        // Function to close the modal
-        function closeModal(modalId) {
-            $('#' + modalId).modal('hide');
-        }
+    // Function to close the modal
+    function closeModal(modalId) {
+        $('#' + modalId).modal('hide');
+    }
+
+    // Add event listeners to close buttons of all modals
+    $(document).ready(function() {
+        $('[data-dismiss="modal"]').on('click', function() {
+            var modalId = $(this).closest('.modal').attr('id');
+            closeModal(modalId);
+        });
+    });
     </script>
 {% endblock %}
 
