@@ -1,191 +1,175 @@
 {% extends "base.html" %}
 
 {% block title %}Dashboard{% endblock %}
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</head>
+
 {% block content %}
-
-{% set displayed_jobs = [] %}
-{% set show_open_positions_table = request.endpoint.endswith('open_positions_by_job') %}
-
-    <div class="row">
-        <div class="col-md-2">
-            <h3>Accounts:</h3>
-            <ul>
-                {% for job in jobs %}
-                <li><a href="{{ url_for('dashboard.get_employees', job_name=job.jobname, job_number=job.jobnumber) }}">{{ job.jobname }}</a></li>
-                {% endfor %}
-            </ul>
-            <h3>Open Positions:</h3>
-            <ul>
-                {% for position in open_positions %}
-                {% if position.jobdescription not in displayed_jobs %}
-                    {% set displayed_jobs = displayed_jobs.append(position.jobdescription) %}
-                    <li><a href="{{ url_for('dashboard.open_positions_by_job', job_name=position.jobdescription) }}">{{ position.jobdescription }}</a></li>
-                {% endif %}
-                {% endfor %}
-            </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link {% if selected_menu == 'employees' %}active{% endif %}" href="{{ url_for('dashboard.dashboard_view_menu', menu='employees') }}">Employees</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if selected_menu == 'open_positions' %}active{% endif %}" href="{{ url_for('dashboard.dashboard_view_menu', menu='open_positions') }}">Open Positions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if selected_menu == 'applicants' %}active{% endif %}" href="{{ url_for('dashboard.dashboard_view_menu', menu='applicants') }}">Applicants</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="col-md-10">
-            <h3>Job Details:</h3>
-            <div class="container">
-                {% if employees %}
-                <table class="table">
-    <thead>
-        <tr>
-            <thead>
-    <tr>
-        <th>Employee Number</th>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Hire Date</th>
-        <th>Employment Type</th>
-        <th>Actions</th> <!-- Add this line -->
-    </tr>
-</thead>
+        <div class="row">
+            <div class="col-md-2">
+                <h3>Accounts:</h3>
+                <ul>
+                    {% for account in accounts %}
+                        <li><a href="{{ url_for('dashboard.get_employees', job_name=account.jobname, job_number=account.jobnumber) }}">{{ account.jobname }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
 
-        </tr>
-    </thead>
-    <tbody>
-        {% for employee in employees %}
-<tr>
-    <td>{{ employee.employeenumber }}</td>
-    <td>{{ employee.firstname }}</td>
-    <td>{{ employee.lastname }}</td>
-    <td>{{ employee.hiredate }}</td>
-    <td>{{ employee.employmenttype }}</td>
-    <td>
-        <a href="{{ url_for('employeetermform.employeetermform', job_number=employee.jobnumber, team_member_name=employee.firstname ~ ' ' ~ employee.lastname, employee_number=employee.employeenumber, jobname=employee.jobname) }}">Term Employee</a>
+            <div class="col-md-10">
+                {% if selected_menu == 'employees' %}
+                    <h3>Employees</h3>
+                    {% if employees %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Employee Number</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Hire Date</th>
+                                    <th>Employment Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for employee in employees %}
+                                    <tr>
+                                        <td>{{ employee.employeenumber }}</td>
+                                        <td>{{ employee.firstname }}</td>
+                                        <td>{{ employee.lastname }}</td>
+                                        <td>{{ employee.hiredate }}</td>
+                                        <td>{{ employee.employmenttype }}</td>
+                                        <td>
+                                            <a href="{{ url_for('employeetermform.employeetermform', job_number=employee.jobnumber, team_member_name=employee.firstname ~ ' ' ~ employee.lastname, employee_number=employee.employeenumber, jobname=employee.jobname) }}">Term Employee</a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>No employees found.</p>
+                    {% endif %}
+                {% elif selected_menu == 'open_positions' %}
+                    <h3>Open Positions</h3>
+                    {% if open_positions %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Position ID</th>
+                                    <th>Job Description</th>
+                                    <th>Employment Type</th>
+                                    <th>Shift</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for position in open_positions %}
+                                    <tr>
+                                        <td>{{ position.positionid }}</td>
+                                        <td>{{ position.jobdescription }}</td>
+                                        <td>{{ position.employmenttype }}</td>
+                                        <td>{{ position.shift }}</td>
+                                        <td>Open Position</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>No open positions found.</p>
+                    {% endif %}
+                {% elif selected_menu == 'applicants' %}
+                    <h3>Applicants</h3>
+                    {% if all_applicants %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Applicant Status</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Job Number</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for applicant in all_applicants %}
+                                    <tr>
+                                        <td>{{ applicant.applicantstatus }}</td>
+                                        <td>{{ applicant.firstname }}</td>
+                                        <td>{{ applicant.lastname }}</td>
+                                        <td>{{ applicant.jobnumber }}</td>
+                                        <td>
+                                            <a href="#" data-bs-toggle="modal" data-bs-target="#applicantModal{{ applicant.applicantid }}">View Applicant</a>
+                                        </td>
 
-    </td> <!-- Add this line -->
-</tr>
-{% endfor %}
-
-        {% if not show_open_positions_table %}
-            {% for position in open_positions %}
-                {% if position.jobdescription == job_name %}
-                    <tr>
-                        <td>{{ position.positionid }}</td>
-                        <td>Open Position</td>
-                        <td>{{ position.employmenttype }}</td>
-                        <td>{{ position.shift }}</td>
-                        <td>Open Position</td>
-                    </tr>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    </tbody>
-</table>
-                <div class="col-md-10">
-
-        <!-- Existing employees table code... -->
-
-        {% if applicants %}
-    <h3>Applicants:</h3>
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Applicant Status</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Actions</th> <!-- Add this line -->
-            </tr>
-        </thead>
-        <tbody>
-            {% for applicant in applicants %}
-                <tr>
-                    <td>{{ applicant.applicantstatus }}</td>
-                    <td>{{ applicant.firstname }}</td>
-                    <td>{{ applicant.lastname }}</td>
-                    <td>
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#applicantModal{{ applicant.applicantid }}">View Applicant</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-{% endif %}
-</div>
-                {% else %}
-                <p>Please select a job to see its employees.</p>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p>No applicants found.</p>
+                    {% endif %}
                 {% endif %}
             </div>
-            {% if job_name and show_open_positions_table %}
-            <h2>Open Positions for {{ job_name }}</h2>
-            <table class="table">
-    <thead>
-        <tr>
-            <th>Employee Number</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Hire Date</th>
-            <th>Employment Type</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for position in open_positions %}
-        <tr>
-            <td>{{ position.positionid }}</td>
-            <td>{{ position.jobtitle }}</td>
-            <td>{{ position.employmenttype }}</td>
-            <td>{{ position.shift }}</td>
-            <td>Open Position</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
-            {% endif %}
         </div>
-    </div>
-{% for applicant in applicants %}
-        <div class="modal fade" id="applicantModal{{ applicant.applicantid }}" tabindex="-1" role="dialog" aria-labelledby="applicantModalLabel{{ applicant.applicantid }}" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="applicantModalLabel{{ applicant.applicantid }}">View Applicant Data</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <p>First Name: {{ applicant.firstname }}</p>
-                        <p>Last Name: {{ applicant.lastname }}</p>
-                        <p>Email: {{ applicant.email }}</p>
-                        <p>Phone: {{ applicant.phone }}</p>
-                        <!-- Add more applicant details here if needed -->
+
+        {% for applicant in all_applicants %}
+            <div class="modal fade" id="applicantModal{{ applicant.applicantid }}" tabindex="-1" role="dialog" aria-labelledby="applicantModalLabel{{ applicant.applicantid }}" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="applicantModalLabel{{ applicant.applicantid }}">View Applicant Data</h5>
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>First Name: {{ applicant.firstname }}</p>
+                            <p>Last Name: {{ applicant.lastname }}</p>
+                            <p>Email: {{ applicant.email }}</p>
+                            <p>Phone: {{ applicant.phone }}</p>
+                            <!-- Add more applicant details here if needed -->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 
     <!-- Add the following JavaScript code -->
-     <script>
+    <script>
         // Function to open the modal
-    function openModal(modalId) {
-        $('#' + modalId).modal({
-            backdrop: 'static',
-            keyboard: false
-        });
-    }
+        function openModal(modalId) {
+            $('#' + modalId).modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+        }
 
-    // Function to close the modal
-    function closeModal(modalId) {
-        $('#' + modalId).modal('hide');
-    }
+        // Function to close the modal
+        function closeModal(modalId) {
+            $('#' + modalId).modal('hide');
+        }
 
-    // Add event listeners to close buttons of all modals
-    $(document).ready(function() {
-        $('[data-dismiss="modal"]').on('click', function() {
-            var modalId = $(this).closest('.modal').attr('id');
-            closeModal(modalId);
+        // Add event listeners to close buttons of all modals
+        $(document).ready(function() {
+            $('[data-bs-dismiss="modal"]').on('click', function() {
+                var modalId = $(this).closest('.modal').attr('id');
+                closeModal(modalId);
+            });
         });
-    });
     </script>
 {% endblock %}
-
