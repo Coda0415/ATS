@@ -16,6 +16,11 @@
                     <li class="nav-item">
                         <a class="nav-link {% if selected_menu == 'applicants' %}active{% endif %}" href="{{ url_for('dashboard.dashboard_view_menu', menu='applicants') }}">Applicants</a>
                     </li>
+                    {% if current_user.role == 'RegionalManager' %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if selected_menu == 'account_managers' %}active{% endif %}" href="{{ url_for('dashboard.dashboard_view_menu', menu='account_managers') }}">Account Managers</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
@@ -121,6 +126,17 @@
                         </table>
                     {% else %}
                         <p>No applicants found.</p>
+                    {% endif %}
+                {% elif selected_menu == 'account_managers' %}
+                    <h3>Account Managers</h3>
+                    {% if account_managers %}
+                        <ul>
+                            {% for manager in account_managers %}
+                                <li>{{ manager.accountmanager }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% else %}
+                        <p>No account managers found.</p>
                     {% endif %}
                 {% endif %}
             </div>
