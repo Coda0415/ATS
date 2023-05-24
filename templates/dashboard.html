@@ -131,16 +131,16 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="applicantModalLabel{{ applicant.applicantid }}">View Applicant Data</h5>
+                            <h5 class="modal-title" id="applicantModalLabel{{ applicant.applicantid }}">{{ applicant.firstname }} {{ applicant.lastname }}</h5>
                             <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>First Name: {{ applicant.firstname }}</p>
-                            <p>Last Name: {{ applicant.lastname }}</p>
+                            <p>Status {{ applicant.applicantstatus }}</p>
                             <p>Email: {{ applicant.email }}</p>
                             <p>Phone: {{ applicant.phone }}</p>
+
                             <!-- Add more applicant details here if needed -->
                         </div>
                     </div>
