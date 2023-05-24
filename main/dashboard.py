@@ -50,7 +50,7 @@ def dashboard_view_menu(menu):
                     open_positions = get_open_positions(manager_name)
                     return render_template('dashboard.html', jobs=jobs, accounts=accounts, open_positions=open_positions, selected_menu='open_positions')
                 elif menu == 'applicants':
-                    applicants = Applicant.query.filter_by().all()
+                    applicants = Applicant.query.filter_by(manager_name).all()
                     return render_template('dashboard.html', jobs=jobs, accounts=accounts, all_applicants=applicants, selected_menu='applicants')
     return render_template('login.html')
 
