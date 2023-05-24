@@ -84,14 +84,28 @@ def dashboard_view_menu(menu):
             if menu == 'employees':
                 return render_template('dashboard.html', accounts=accounts, selected_menu='employees')
             elif menu == 'open_positions':
-                open_positions = openpositionsroster.query.all()
-                return render_template('dashboard.html', accounts=accounts, open_positions=open_positions, selected_menu='open_positions')
+                manager = regionalmanagermasterlist.query.filter(regionalmanagermasterlist.manageremail.ilike(current_user.email)).first()
+                print(manager.regionalmanager)
+                if manager:
+                    manager_name = manager.regionalmanager
+                    open_positions = openpositionsroster.query.filter_by(regionalmanager=manager_name).all()
+                    return render_template('dashboard.html', accounts=accounts, open_positions=open_positions, selected_menu='open_positions')
             elif menu == 'applicants':
-                applicants = Applicant.query.all()
-                return render_template('dashboard.html', accounts=accounts, all_applicants=applicants, selected_menu='applicants')
+                manager = regionalmanagermasterlist.query.filter(regionalmanagermasterlist.manageremail.ilike(current_user.email)).first()
+                print(manager.regionalmanager)
+                if manager:
+                    manager_name = manager.regionalmanager
+                    applicants = Applicant.query.filter_by(regionalmanager=manager_name).all()
+                    return render_template('dashboard.html', accounts=accounts, all_applicants=applicants,
+                                           selected_menu='applicants')
             elif menu == 'account_managers':
-                account_managers = accountmanagermasterlist.query.all()
-                return render_template('dashboard.html', accounts=accounts, account_managers=account_managers, selected_menu='account_managers')
+                manager = regionalmanagermasterlist.query.filter(
+                    regionalmanagermasterlist.manageremail.ilike(current_user.email)).first()
+                print(manager.regionalmanager)
+                if manager:
+                    manager_name = manager.regionalmanager
+                    account_managers = accountmanagermasterlist.query.filter_by(regionalmanager=manager_name).all()
+                    return render_template('dashboard.html', accounts=accounts, account_managers=account_managers, selected_menu='account_managers')
     return render_template('login.html')
 
 
