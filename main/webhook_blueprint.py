@@ -61,3 +61,15 @@ def display_data():
     lastname = contact_fetched.get('properties', {}).get('lastname', None)
     appstatus = contact_fetched.get('properties', {}).get('appstatus',None)
     return render_template('webhook_log.html', firstname=firstname, lastname=lastname, appstatus=appstatus)
+
+
+@webhook_blueprint.route('/webhook/applicant')
+def webhook_applicant():
+    # Get the request payload
+    payload = request.json
+    print(payload)
+
+
+
+    return 'Webhook received successfully'
+

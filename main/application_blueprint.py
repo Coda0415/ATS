@@ -4,6 +4,7 @@ from .models import applicants
 from datetime import datetime
 from . import db
 from .functions import generate_applicant_id
+from .emailtester import send_email_with_info
 import base64
 import pickle
 
@@ -269,6 +270,17 @@ def application():
             lastname = new_application.lastname
             email = new_application.email
             applicant_id = new_application.applicantid
+
+            # Create a dictionary with the relevant information for sending the email
+            email_data = {
+                'form_dict': form_dict,
+                'applicant_id': applicant_id,
+                'account_manager': request.args.get('account_manager'),
+                'regional_manager': request.args.get('regional_manager')
+            }
+
+            # Call the send_email_with_info function with the email_data dictionary
+            send_email_with_info(**email_data)
 
             return redirect(url_for('esign.esign', firstname=firstname, lastname=lastname, email=email,
                                     applicantid=applicant_id))

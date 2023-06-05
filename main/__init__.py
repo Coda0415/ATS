@@ -70,6 +70,9 @@ def create_app():
     from .esign_blueprint import esign_blueprint
     app.register_blueprint(esign_blueprint)
 
+    from .emailtester import email_blueprint
+    app.register_blueprint(email_blueprint)
+
 
     # Return the created Flask app
     return app
