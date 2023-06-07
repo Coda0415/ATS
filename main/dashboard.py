@@ -175,6 +175,7 @@ def update_choice():
     user_choice = data.get('choice')
     user_email = data.get('email')
     applicant_id = data.get('applicant_id')
+    print(user_choice)
 
     # Update the applicant's fields in the database
     applicant = Applicant.query.filter_by(applicantid=applicant_id).first()
