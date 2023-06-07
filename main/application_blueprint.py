@@ -289,3 +289,4 @@ def application():
 
     return render_template('application.html', position_id=position_id, regional_manager=regional_manager,
                            account_manager=account_manager)
+

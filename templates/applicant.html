@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Applicant Information{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Applicant Information</h1>
+        <h2>Applicant ID: {{ applicantid }}</h2>
+        <h3>Applicant Details:</h3>
+        <ul>
+            <li><strong>Name:</strong> {{ applicant.firstname }} {{ applicant.lastname }}</li>
+            <li><strong>Email:</strong> {{ applicant.email }}</li>
+            <li><strong>Address:</strong> {{ applicant.address }}</li>
+            <!-- Add more applicant details as needed -->
+        </ul>
+    </div>
+{% endblock %}

@@ -158,6 +158,9 @@
                             <p>Status {{ applicant.applicantstatus }}</p>
                             <p>Email: {{ applicant.email }}</p>
                             <p>Phone: {{ applicant.phone }}</p>
+                            <a href="{{ url_for('dashboard.view_applicant', applicantid=applicant.applicantid) }}">View Applicant Page</a>
+
+
 
                             <!-- Add more applicant details here if needed -->
                         </div>

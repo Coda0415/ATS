@@ -159,3 +159,11 @@ def open_positions_by_job(job_name):
             open_positions = openpositionsroster.query.filter_by(jobdescription=job_name).all()
             return render_template('dashboard.html', open_positions=open_positions, job_name=job_name, accounts=accounts, selected_menu='open_positions')
     return render_template('login.html')
+
+@dashboard.route('/applicant/<applicantid>')
+def view_applicant(applicantid):
+    applicant = Applicant.query.filter_by(applicantid=applicantid).first()
+    if applicant:
+        return render_template('applicant.html', applicantid=applicantid, applicant=applicant)
+    else:
+        return render_template('error.html', message='Applicant not found')
