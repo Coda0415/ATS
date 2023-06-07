@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request
 from flask_login import current_user
 from .models import jobmasterlist, accountmanagermasterlist, regionalmanagermasterlist, employeemasterlist, openpositionsroster, applicants as Applicant
 
@@ -167,3 +167,11 @@ def view_applicant(applicantid):
         return render_template('applicant.html', applicantid=applicantid, applicant=applicant)
     else:
         return render_template('error.html', message='Applicant not found')
+
+@dashboard.route('/update_choice', methods=['POST'])
+def update_choice():
+    data = request.get_json()
+    user_choice = data.get('choice')
+    # Perform any necessary actions with the user's choice
+    print('User choice:', user_choice)
+    return 'OK'

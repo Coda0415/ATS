@@ -157,7 +157,7 @@
                         <div class="modal-body">
                             <p>Status {{ applicant.applicantstatus }}</p>
                             <p>Email: {{ applicant.email }}</p>
-                            <p>Phone: {{ applicant.phone }}</p>
+                            <p>Phone: <a href="#" onclick="handlePhoneLinkClick('{{ applicant.phone }}')">{{ applicant.phone }}</a></p>
                             <a href="{{ url_for('dashboard.view_applicant', applicantid=applicant.applicantid) }}">View Applicant Page</a>
 
 
@@ -192,5 +192,31 @@
                 closeModal(modalId);
             });
         });
+
+        function handlePhoneLinkClick(phoneNumber) {
+        var response = confirm('How would you like to contact this applicant?\n\nPress OK to make a call.\nPress Cancel to send a text message.');
+        var action = response ? 'call' : 'text';
+
+        // Send an AJAX request to update the user's choice on the server
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/update_choice');
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                // Update the HTML element with the user's choice
+                document.getElementById('user-choice').textContent = action;
+            }
+        };
+        xhr.send(JSON.stringify({ choice: action }));
+
+        // Perform additional actions based on the user's choice
+        if (action === 'call') {
+            // Perform actions for making a call
+            window.location.href = 'tel:' + phoneNumber;
+        } else if (action === 'text') {
+            // Perform actions for sending a text message
+            window.location.href = 'sms:' + phoneNumber;
+        }
+    }
     </script>
 {% endblock %}
