@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request
 from flask_login import current_user
 from .models import jobmasterlist, accountmanagermasterlist, regionalmanagermasterlist, employeemasterlist, openpositionsroster, applicants as Applicant
+from datetime import datetime
 
 dashboard = Blueprint('dashboard', __name__, template_folder='templates')
 
@@ -172,6 +173,40 @@ def view_applicant(applicantid):
 def update_choice():
     data = request.get_json()
     user_choice = data.get('choice')
-    # Perform any necessary actions with the user's choice
-    print('User choice:', user_choice)
-    return 'OK'
+    user_email = data.get('email')
+    applicant_id = data.get('applicant_id')
+
+    # Update the applicant's fields in the database
+    applicant = Applicant.query.filter_by(applicantid=applicant_id).first()
+    if applicant:
+        current_time = datetime.now()
+
+        # Update lastcontact field
+        applicant.lastcontact = current_time
+
+        # Update lastcontacttype field
+        last_contact_type = f"{user_email}: {user_choice}"
+        applicant.lastcontacttype = last_contact_type
+
+        # Update contacthistory field
+        if applicant.contacthistory:
+            contact_history = eval(applicant.contacthistory)
+        else:
+            contact_history = {}
+
+        contact_history[user_email] = {user_choice: current_time}
+        applicant.contacthistory = str(contact_history)
+
+        db.session.commit()
+
+        # Update the HubSpot contact property
+        hubspot_contact_id = applicant.hubspotcontactid
+        print(hubspot_contact_id)
+        if hubspot_contact_id:
+            update_hubspot_contact_property(hubspot_contact_id, 'notes_last_contacted', current_time)
+            # update_hubspot_contact_property(hubspot_contact_id, 'last_contact_type', last_contact_type)
+            # update_hubspot_contact_property(hubspot_contact_id, 'contact_history', contact_history)
+
+        return 'OK'
+
+    return 'Applicant not found', 404
