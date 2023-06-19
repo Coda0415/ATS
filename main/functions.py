@@ -1,6 +1,9 @@
 from .models import applicants
 from . import db
 import requests
+import hubspot
+from pprint import pprint
+from hubspot.crm.contacts import SimplePublicObjectInput, ApiException
 
 def generate_applicant_id(position_id):
     # Count the number of existing applicants for the position
@@ -12,17 +15,16 @@ def generate_applicant_id(position_id):
 
 
 def update_hubspot_contact_property(hubspotcontactid, property_name, property_value):
-    print(hubspotcontactid)
-    private_app_access_token = 'pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68'
-    endpoint = f'https://api.hubapi.com/contacts/v1/contact/vid/{hubspotcontactid}/profile'
-    headers = {'Content-Type': 'application/json'}
-    data = {'properties': [{ 'property': property_name, 'value': property_value }]}
-    params = {'hapikey': private_app_access_token}
+        client = hubspot.Client.create(access_token="pat-na1-12bad899-4b41-48a4-b609-f6ea32f91a68")
 
-    response = requests.post(endpoint, json=data, headers=headers, params=params)
-    if response.status_code == 200:
-        # Property updated successfully
-        print('HubSpot contact property updated')
-    else:
-        # Error occurred while updating the property
-        print('Failed to update HubSpot contact property:', response.text)
+        properties = {
+            property_name : property_value,
+
+        }
+        simple_public_object_input = SimplePublicObjectInput(properties=properties)
+        try:
+            api_response = client.crm.contacts.basic_api.update(contact_id=hubspotcontactid,
+                                                                simple_public_object_input=simple_public_object_input)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling basic_api->update: %s\n" % e)

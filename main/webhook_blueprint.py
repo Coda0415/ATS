@@ -16,10 +16,18 @@ contact_fetched = {}
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST'])
 def hubspot_webhook():
     data = json.loads(request.data)
-    contact_id = data[0].get('objectId', None)  # extract the objectId from the first dictionary in the list
-    propertyname = data[0].get('propertyName', None)
-    if propertyname == "appstatus":
-        appstatus = data[0].get('propertyValue', None)
+    event_type = data[0].get('eventType', None)  # extract the eventType from the first dictionary in the list
+    allowed_event_types = ["contact.propertyChange"]  # set the allowed eventType
+
+    if event_type not in allowed_event_types:
+        return jsonify({"status": "ignored"}), 200
+
+    contact_id = data[0].get('objectId', None)
+    property_name = data[0].get('propertyName', None)
+    if property_name != "appstatus":  # ignore if propertyName is not "appstatus"
+        return jsonify({"status": "ignored"}), 200
+
+    appstatus = data[0].get('propertyValue', None)
     print(f"Received object ID: {contact_id}")
     global contact_fetched
     contact_fetched = fetch_contact(contact_id, db, appstatus)
@@ -68,8 +76,4 @@ def webhook_applicant():
     # Get the request payload
     payload = request.json
     print(payload)
-
-
-
     return 'Webhook received successfully'
-

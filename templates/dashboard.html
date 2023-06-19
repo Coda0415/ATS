@@ -157,7 +157,8 @@
                         <div class="modal-body">
                             <p>Status {{ applicant.applicantstatus }}</p>
                             <p>Email: {{ applicant.email }}</p>
-                            <p>Phone: <a href="#" onclick="handlePhoneLinkClick('{{ applicant.phone }}')">{{ applicant.phone }}</a></p>
+                            <p>Phone: <a href="#" onclick="handlePhoneLinkClick('{{ applicant.phone }}', '{{ applicant.applicantid }}')">{{ applicant.phone }}</a>
+</p>
                             <a href="{{ url_for('dashboard.view_applicant', applicantid=applicant.applicantid) }}">View Applicant Page</a>
 
 
@@ -193,13 +194,13 @@
             });
         });
 
-        function handlePhoneLinkClick(phoneNumber) {
+        function handlePhoneLinkClick(phoneNumber, applicantid) {
         var response = confirm('How would you like to contact this applicant?\n\nPress OK to make a call.\nPress Cancel to send a text message.');
         var action = response ? 'call' : 'text';
 
         // Send an AJAX request to update the user's choice on the server
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/update_choice');
+        xhr.open('POST', '/update_choice/' + applicantid);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onload = function() {
             if (xhr.status === 200) {

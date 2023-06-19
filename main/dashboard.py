@@ -1,7 +1,11 @@
 from flask import Blueprint, render_template, request
 from flask_login import current_user
 from .models import jobmasterlist, accountmanagermasterlist, regionalmanagermasterlist, employeemasterlist, openpositionsroster, applicants as Applicant
-from datetime import datetime
+import datetime
+from . import db
+from .functions import update_hubspot_contact_property
+import json
+import ast
 
 dashboard = Blueprint('dashboard', __name__, template_folder='templates')
 
@@ -169,18 +173,20 @@ def view_applicant(applicantid):
     else:
         return render_template('error.html', message='Applicant not found')
 
-@dashboard.route('/update_choice', methods=['POST'])
-def update_choice():
+@dashboard.route('/update_choice/<applicantid>', methods=['POST'])
+def update_choice(applicantid):
+    print(applicantid)
     data = request.get_json()
     user_choice = data.get('choice')
-    user_email = data.get('email')
-    applicant_id = data.get('applicant_id')
+    user_email = current_user
+    applicant_id = applicantid
     print(user_choice)
 
     # Update the applicant's fields in the database
     applicant = Applicant.query.filter_by(applicantid=applicant_id).first()
+    print(applicant_id)
     if applicant:
-        current_time = datetime.now()
+        current_time = datetime.datetime.now()
 
         # Update lastcontact field
         applicant.lastcontact = current_time
@@ -189,14 +195,14 @@ def update_choice():
         last_contact_type = f"{user_email}: {user_choice}"
         applicant.lastcontacttype = last_contact_type
 
-        # Update contacthistory field
-        if applicant.contacthistory:
-            contact_history = eval(applicant.contacthistory)
-        else:
-            contact_history = {}
-
-        contact_history[user_email] = {user_choice: current_time}
-        applicant.contacthistory = str(contact_history)
+        # # Update contacthistory field
+        # if applicant.contacthistory:
+        #     contact_history = json.loads(applicant.contacthistory.replace("'", '"'))
+        # else:
+        #     contact_history = {}
+        #
+        # contact_history[str(user_email)] = {user_choice: str(current_time)}
+        # applicant.contacthistory = json.dumps(contact_history)
 
         db.session.commit()
 
@@ -204,10 +210,12 @@ def update_choice():
         hubspot_contact_id = applicant.hubspotcontactid
         print(hubspot_contact_id)
         if hubspot_contact_id:
-            update_hubspot_contact_property(hubspot_contact_id, 'notes_last_contacted', current_time)
+            update_hubspot_contact_property(hubspot_contact_id, 'notes_last_contacted', str(current_time))
             # update_hubspot_contact_property(hubspot_contact_id, 'last_contact_type', last_contact_type)
             # update_hubspot_contact_property(hubspot_contact_id, 'contact_history', contact_history)
 
         return 'OK'
 
     return 'Applicant not found', 404
+
+
