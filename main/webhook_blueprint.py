@@ -16,22 +16,35 @@ contact_fetched = {}
 @webhook_blueprint.route('/webhook/hubspot', methods=['POST'])
 def hubspot_webhook():
     data = json.loads(request.data)
-    event_type = data[0].get('eventType', None)  # extract the eventType from the first dictionary in the list
-    allowed_event_types = ["contact.propertyChange"]  # set the allowed eventType
+    event_type = data.get('subscriptionType', None)
+    allowed_event_types = ["contact.propertyChange"]
 
     if event_type not in allowed_event_types:
         return jsonify({"status": "ignored"}), 200
 
-    contact_id = data[0].get('objectId', None)
-    property_name = data[0].get('propertyName', None)
-    if property_name != "appstatus":  # ignore if propertyName is not "appstatus"
+    contact_id = data.get('objectId', None)
+    property_name = data.get('propertyName', None)
+    property_value = data.get('propertyValue', None)
+    print(f"Received object ID: {contact_id}")
+
+    global contact_fetched
+    if property_name == "hire_eligibility":
+        # Handle 'hire_eligibility' property
+        # TODO: add the specific logic for 'hire_eligibility' here
+        contact_fetched = fetch_contact(contact_id, db, property_value)
+    elif property_name == "background_check_status":
+        # Handle 'background_check_status' property
+        # TODO: add the specific logic for 'background_check_status' here
+        contact_fetched = fetch_contact(contact_id, db, property_value)
+    elif property_name == "appstatus":
+        # Handle 'background_check_status' property
+        # TODO: add the specific logic for 'appstatus' here
+        contact_fetched = fetch_contact(contact_id, db, property_value)
+    else:
         return jsonify({"status": "ignored"}), 200
 
-    appstatus = data[0].get('propertyValue', None)
-    print(f"Received object ID: {contact_id}")
-    global contact_fetched
-    contact_fetched = fetch_contact(contact_id, db, appstatus)
     return jsonify({"status":"ok"}), 200
+
 
 def fetch_contact(contact_id, db, appstatus):
     try:

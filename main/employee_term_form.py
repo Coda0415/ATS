@@ -71,13 +71,11 @@ def employeetermform():
 
 @employeetermform_blueprint.route("/submit_employeetermform", methods=["POST"])
 def submit_employeetermform():
-
-    # print(request.form)
     employee_number = request.form.get('employee_number')
     employees = employeemasterlist.query.filter_by(employeenumber=employee_number).all()
+
     if employees:
         for employee in employees:
-            # print(employee.firstname)
             employee_data = {
                 'id': employee.id,
                 'employeenumber': employee.employeenumber,
@@ -122,51 +120,23 @@ def submit_employeetermform():
                 'eligibleforhiredate': ''  # Add the appropriate form data for 'eligibleforhiredate'
             }
 
-            database_data = {
-                'id': employee.id,
-                'employeenumber': employee.employeenumber,
-                'firstname': employee.firstname,
-                'lastname': employee.lastname,
-                'hiredate': employee.hiredate,
-                'classificationdescription': employee.classificationdescription,
-                'employeetypedescription': employee.employeetypedescription,
-                'supervisordescription': employee.supervisordescription,
-                'jobnumber': employee.jobnumber,
-                'jobname': employee.jobname,
-                'categorydescription': employee.categorydescription,
-                'region': employee.region,
-                'title': employee.title,
-                'jobstate': employee.jobstate,
-                'companyaddress2': employee.companyaddress2,
-                'uctaxpayeridnumber': employee.uctaxpayeridnumber,
-                'jobaddress': employee.jobaddress,
-                'jobaddress2': employee.jobaddress2,
-                'jobcity': employee.jobcity,
-                'jobzip': employee.jobzip,
-                'employmenttype': employee.employmenttype
-            }
-
             term_employee = termemployeetable(**employee_data)
 
             # Add the new instance to the session
             db.session.add(term_employee)
 
-            # Save employee data as JSON
-            with open('termedemployee.json', 'w') as file:
-                json.dump(database_data, file, ensure_ascii=False)
-
+            # Delete employee from employeemasterlist
             db.session.delete(employee)
 
+            print("Added to term employee table and deleted from master list: ", employee_data['employeenumber'])
 
-
-            print("Added to table")
+        # Commit the transaction
+        db.session.commit()
+        return "Success"
     else:
-        print('Employee not found')
+        return "No employee found with given employee number"
 
 
-    # Commit the changes to the database
-    db.session.commit()
-    return redirect(url_for("employeetermform.employeetermform"))
 @employeetermform_blueprint.route("/add_to_employeemasterlist", methods=["POST"])
 def add_to_employeemasterlist():
     # Read employee data from the JSON file
