@@ -132,9 +132,9 @@ def submit_employeetermform():
 
         # Commit the transaction
         db.session.commit()
-        return "Success"
+        return redirect(url_for('dashboard.dashboard_view'))
     else:
-        return "No employee found with given employee number"
+        return "Employee not Found"
 
 
 @employeetermform_blueprint.route("/add_to_employeemasterlist", methods=["POST"])
